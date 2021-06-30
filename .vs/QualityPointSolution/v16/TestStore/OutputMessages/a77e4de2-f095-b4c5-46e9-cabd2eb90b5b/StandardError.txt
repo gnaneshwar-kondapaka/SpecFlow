@@ -1,0 +1,42 @@
+Multiple failures or warnings in test:
+  1)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+  Expected: True
+  But was:  False
+
+  2)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+  Expected: True
+  But was:  False
+
+NUnit.Framework.AssertionException: Multiple failures or warnings in test:
+  1)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+  Expected: True
+  But was:  False
+
+  2)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+  Expected: True
+  But was:  False
+
+
+   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 394
+   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 382
+   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 240
+   at NUnit.Framework.Assert.IsTrue(Boolean condition, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.Conditions.cs:line 99
+   at Utils.PublicLibrary.ReportException(String Message) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 337
+   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 80
+   at lambda_method(Closure , IContextManager , String , String )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 530
+   at TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 435
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 207
+   at TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors() in D:\a\1\s\TechTalk.SpecFlow\TestRunner.cs:line 59
+   at ClassLibraryDotNetFrameWork.Features.LoginFeature.ScenarioCleanup()
+   at ClassLibraryDotNetFrameWork.Features.LoginFeature.LoggingInWithInvalidCredentials() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Features\Login.feature:line 22
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   at TechTalk.SpecRun.Framework.TestNodeTask.Execute()

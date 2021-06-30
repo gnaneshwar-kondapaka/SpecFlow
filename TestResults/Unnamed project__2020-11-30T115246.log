@@ -1,0 +1,420 @@
+﻿2020-11-30T11:52:46.6074262+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T11:52:46.6074262+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T11:52:46.6074262+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T11:52:46.6074262+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T11:52:46.6894321+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T11:52:46.6894321+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T11:52:46.6894321+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T11:52:46.7844386+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T115246.log
+2020-11-30T11:52:46.8124400+05:30;Thread#11;Info;Checking activation
+2020-11-30T11:52:46.9114467+05:30;Thread#11;Info;Activated.
+2020-11-30T11:52:46.9124463+05:30;Thread#11;Info;Activation check completed
+2020-11-30T11:52:46.9124463+05:30;Thread#11;Info;Starting test run
+2020-11-30T11:52:46.9704500+05:30;Thread#11;Info;Discovering target: Default
+2020-11-30T11:52:46.9704500+05:30;Thread#11;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T11:52:47.4674796+05:30;Thread#11;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T11:52:47.4694814+05:30:Test Suite Dump
+2020-11-30T11:52:47.4714824+05:30:#0: Unnamed project/ - 
+2020-11-30T11:52:47.4714824+05:30:#1: Default - 
+2020-11-30T11:52:47.4714824+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T11:52:47.4714824+05:30:#3: Admin Registration - 
+2020-11-30T11:52:47.4714824+05:30:#5: Buy Now - 
+2020-11-30T11:52:47.4714824+05:30:#7: Download Time Sheet - 
+2020-11-30T11:52:47.4714824+05:30:#9: Help Files - 
+2020-11-30T11:52:47.4714824+05:30:#11: Login - 
+2020-11-30T11:52:47.4714824+05:30:#14: LogOut - 
+2020-11-30T11:52:47.4714824+05:30:#16: Select Employee - 
+2020-11-30T11:52:47.4714824+05:30:#19: Select Project - 
+2020-11-30T11:52:47.4714824+05:30:#22: ViewReport - 
+2020-11-30T11:52:47.5284857+05:30:#4: Clicking on Admin Registration button from Home page - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Admin+Registration/Scenario:Clicking+on+Admin+Registration+button+from+Home+page
+2020-11-30T11:52:47.5284857+05:30:#6: Clicking on BuyNow button from Home Page - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Buy+Now/Scenario:Clicking+on+BuyNow+button+from+Home+Page
+2020-11-30T11:52:47.5284857+05:30:#8: Clicking on download pdf option from Report page - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Download+Time+Sheet/Scenario:Clicking+on+download+pdf+option+from+Report+page
+2020-11-30T11:52:47.5284857+05:30:#10: Clicking on Help Files button from Home page - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Help+Files/Scenario:Clicking+on+Help+Files+button+from+Home+page
+2020-11-30T11:52:47.5284857+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T11:52:47.5284857+05:30:#13: Logging in with Invalid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+Invalid+credentials
+2020-11-30T11:52:47.5284857+05:30:#15: Clicking on Logout option from Report page - TestAssembly:ClassLibraryDotNetFrameWork/Feature:LogOut/Scenario:Clicking+on+Logout+option+from+Report+page
+2020-11-30T11:52:47.5294857+05:30:#17: By default the Employee field should be populated with "All" value - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Select+Employee/Scenario:By+default+the+Employee+field+should+be+populated+with+%22All%22+value
+2020-11-30T11:52:47.5294857+05:30:#18: Select an Employee from the employee drop down. - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Select+Employee/Scenario:Select+an+Employee+from+the+employee+drop+down.
+2020-11-30T11:52:47.5294857+05:30:#20: By default the Project field should be populated with "All" value - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Select+Project/Scenario:By+default+the+Project+field+should+be+populated+with+%22All%22+value
+2020-11-30T11:52:47.5294857+05:30:#21: Selecting the Project from the Project drop down - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Select+Project/Scenario:Selecting+the+Project+from+the+Project+drop+down
+2020-11-30T11:52:47.5294857+05:30:#23: Viewing reports with default time frame - TestAssembly:ClassLibraryDotNetFrameWork/Feature:ViewReport/Scenario:Viewing+reports+with+default+time+frame
+2020-11-30T11:52:47.5294857+05:30:#24: Viewing reports with specifing the time frame - TestAssembly:ClassLibraryDotNetFrameWork/Feature:ViewReport/Scenario:Viewing+reports+with+specifing+the+time+frame
+2020-11-30T11:52:47.5294857+05:30:End: Test Suite Dump
+2020-11-30T11:52:47.5614896+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:52:47.5634879+05:30:Thread#:Scheduler: testitem #4 from normal test queue 
+2020-11-30T11:52:47.5634879+05:30:Thread#0:Scheduler: considering testitem #4 for thread 0
+2020-11-30T11:52:47.5724883+05:30:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:52:47.5724883+05:30:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:52:47.5724883+05:30:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:52:47.5724883+05:30:Thread#0:Scheduler: using testitem #4 for thread 0
+2020-11-30T11:52:47.5744889+05:30:Thread#0:Scheduler: Test #4 is scheduled for thread
+2020-11-30T11:52:47.5754885+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:52:47.5784891+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T11:52:47.5804892+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T11:52:47.5854908+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T11:52:47.5874895+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T11:52:48.2125285+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T11:52:48.2235304+05:30:Thread#0:T:-> Using default config
+2020-11-30T11:52:49.8456339+05:30:Thread#0: Test #4/0 is started on thread #0
+2020-11-30T11:52:49.8836367+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:52:56.2540393+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (6.3s)
+2020-11-30T11:52:56.2570381+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:53:00.2415375+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (4.0s)
+2020-11-30T11:53:00.2505375+05:30:Thread#0:B:When Click on Admin Registration button
+2020-11-30T11:53:02.2616666+05:30:Thread#0:T:done: AdminRegistrationSteps.WhenClickedOnAdminRegistrationButton() (2.0s)
+2020-11-30T11:53:02.2666673+05:30:Thread#0:B:Then Should be Navigated to "AdminRegistration" Page
+2020-11-30T11:53:02.2826681+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("AdminRegistration") (0.0s)
+2020-11-30T11:53:02.2866683+05:30:Thread#0:B:And Close the Application
+2020-11-30T11:53:03.9407708+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.6s)
+2020-11-30T11:53:03.9617712+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:53:03.9617712+05:30:Thread#:Scheduler: testitem #6 from normal test queue 
+2020-11-30T11:53:03.9617712+05:30:Thread#0:Scheduler: considering testitem #6 for thread 0
+2020-11-30T11:53:03.9627713+05:30:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:53:03.9627713+05:30:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:53:03.9627713+05:30:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:53:03.9627713+05:30:Thread#0:Scheduler: using testitem #6 for thread 0
+2020-11-30T11:53:03.9627713+05:30:Thread#0:Scheduler: Test #6 is scheduled for thread
+2020-11-30T11:53:03.9627713+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:53:03.9827721+05:30:Thread#0: Test #4/0 is finished on thread #0 as Succeeded within 14.1361387 seconds
+2020-11-30T11:53:03.9887729+05:30:Thread#0: Test #6/0 is started on thread #0
+2020-11-30T11:53:03.9947731+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:53:08.9040041+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.9s)
+2020-11-30T11:53:08.9080043+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:53:11.4837771+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.6s)
+2020-11-30T11:53:11.4887778+05:30:Thread#0:B:When Clicked on Buy Now button
+2020-11-30T11:53:14.0516649+05:30:Thread#0:T:done: BuyNowSteps.WhenClickedOnBuyNowButton() (2.6s)
+2020-11-30T11:53:14.0556673+05:30:Thread#0:B:Then Should be Navigated to "QTP" Page
+2020-11-30T11:53:14.0796679+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("QTP") (0.0s)
+2020-11-30T11:53:14.0836681+05:30:Thread#0:B:And Close the Application
+2020-11-30T11:53:15.5257591+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.4s)
+2020-11-30T11:53:15.5337613+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:53:15.5337613+05:30:Thread#:Scheduler: testitem #8 from normal test queue 
+2020-11-30T11:53:15.5337613+05:30:Thread#0:Scheduler: considering testitem #8 for thread 0
+2020-11-30T11:53:15.5337613+05:30:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:53:15.5337613+05:30:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:53:15.5337613+05:30:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:53:15.5337613+05:30:Thread#0:Scheduler: using testitem #8 for thread 0
+2020-11-30T11:53:15.5337613+05:30:Thread#0:Scheduler: Test #8 is scheduled for thread
+2020-11-30T11:53:15.5337613+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:53:15.5387606+05:30:Thread#0: Test #6/0 is finished on thread #0 as Succeeded within 11.5489872 seconds
+2020-11-30T11:53:15.5427604+05:30:Thread#0: Test #8/0 is started on thread #0
+2020-11-30T11:53:15.5477602+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:53:20.4070718+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.9s)
+2020-11-30T11:53:20.4110720+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:53:22.3726721+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.0s)
+2020-11-30T11:53:22.3786715+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:53:22.7556969+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.4s)
+2020-11-30T11:53:22.7596975+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:53:28.0480291+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (5.3s)
+2020-11-30T11:53:28.0520297+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:53:28.0680300+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:53:28.0790306+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:53:28.0920321+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:53:28.0950314+05:30:Thread#0:B:When Click on download Time sheet option
+2020-11-30T11:53:28.2780431+05:30:Thread#0:T:done: DownloadTimeSheetSteps.WhenClickedOnDownloadPdfOption() (0.2s)
+2020-11-30T11:53:28.2830443+05:30:Thread#0:B:Then Report should be downloaded
+2020-11-30T11:53:28.3570488+05:30:Thread#0:T:done: DownloadTimeSheetSteps.ThenReportShouldBeDownloaded() (0.1s)
+2020-11-30T11:53:28.3610499+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:53:32.7803317+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (4.4s)
+2020-11-30T11:53:32.7883326+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:53:32.7883326+05:30:Thread#:Scheduler: testitem #10 from normal test queue 
+2020-11-30T11:53:32.7883326+05:30:Thread#0:Scheduler: considering testitem #10 for thread 0
+2020-11-30T11:53:32.7883326+05:30:Thread#0:TestItem#10:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:53:32.7883326+05:30:Thread#0:TestItem#10:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:53:32.7883326+05:30:Thread#0:TestItem#10:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:53:32.7883326+05:30:Thread#0:Scheduler: using testitem #10 for thread 0
+2020-11-30T11:53:32.7883326+05:30:Thread#0:Scheduler: Test #10 is scheduled for thread
+2020-11-30T11:53:32.7883326+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:53:32.7923332+05:30:Thread#0: Test #8/0 is finished on thread #0 as Succeeded within 17.2495728 seconds
+2020-11-30T11:53:32.7983331+05:30:Thread#0: Test #10/0 is started on thread #0
+2020-11-30T11:53:32.8043334+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:53:37.5796333+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.8s)
+2020-11-30T11:53:37.5836334+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:53:39.6687666+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.1s)
+2020-11-30T11:53:39.6727682+05:30:Thread#0:B:When Clicked on Help Files button
+2020-11-30T11:53:40.5728252+05:30:Thread#0:T:done: HelpFilesSteps.WhenClickedOnHelpFilesButton() (0.9s)
+2020-11-30T11:53:40.5788242+05:30:Thread#0:B:Then Should be Navigated to "HelpFiles" Page
+2020-11-30T11:53:40.5998275+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("HelpFiles") (0.0s)
+2020-11-30T11:53:40.6038272+05:30:Thread#0:B:And Close the Application
+2020-11-30T11:53:42.0979226+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.5s)
+2020-11-30T11:53:42.1059230+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:53:42.1059230+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T11:53:42.1059230+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T11:53:42.1059230+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:53:42.1059230+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:53:42.1059230+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:53:42.1059230+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T11:53:42.1059230+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T11:53:42.1059230+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:53:42.1099228+05:30:Thread#0: Test #10/0 is finished on thread #0 as Succeeded within 9.3115897 seconds
+2020-11-30T11:53:42.1149239+05:30:Thread#0: Test #12/0 is started on thread #0
+2020-11-30T11:53:42.1199242+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:53:46.6768670+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.6s)
+2020-11-30T11:53:46.6808672+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:53:49.0740205+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.4s)
+2020-11-30T11:53:49.0790217+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:53:49.3890419+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:53:49.3930408+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:53:53.5973106+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (4.2s)
+2020-11-30T11:53:53.6013104+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T11:53:53.6133114+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:53:53.6173120+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:53:57.2665389+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (3.6s)
+2020-11-30T11:53:57.2745397+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:53:57.2745397+05:30:Thread#:Scheduler: testitem #13 from normal test queue 
+2020-11-30T11:53:57.2745397+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T11:53:57.2745397+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:53:57.2745397+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:53:57.2745397+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:53:57.2745397+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T11:53:57.2745397+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T11:53:57.2745397+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:53:57.2795404+05:30:Thread#0: Test #12/0 is finished on thread #0 as Succeeded within 15.1646165 seconds
+2020-11-30T11:53:57.2835401+05:30:Thread#0: Test #13/0 is started on thread #0
+2020-11-30T11:53:57.2875407+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:54:01.8097330+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.5s)
+2020-11-30T11:54:01.8137336+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:54:04.2688097+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.5s)
+2020-11-30T11:54:04.2728099+05:30:Thread#0:B:When Enter "InCorrectUser" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T11:54:04.6108316+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("InCorrectUser", "InCorrectPassword") (0.3s)
+2020-11-30T11:54:04.6148318+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:54:06.2019336+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (1.6s)
+2020-11-30T11:54:06.2049329+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T11:54:06.2419356+05:30:Thread#0:T:done: LoginSteps.ThenErrorMessageShouldBeDisplayedInLoginPage("LoginFailedMessage") (0.0s)
+2020-11-30T11:54:06.2469363+05:30:Thread#0:B:And Close the Application
+2020-11-30T11:54:07.6030164+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.4s)
+2020-11-30T11:54:07.6110248+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:54:07.6110248+05:30:Thread#:Scheduler: testitem #15 from normal test queue 
+2020-11-30T11:54:07.6110248+05:30:Thread#0:Scheduler: considering testitem #15 for thread 0
+2020-11-30T11:54:07.6110248+05:30:Thread#0:TestItem#15:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:54:07.6110248+05:30:Thread#0:TestItem#15:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:54:07.6110248+05:30:Thread#0:TestItem#15:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:54:07.6110248+05:30:Thread#0:Scheduler: using testitem #15 for thread 0
+2020-11-30T11:54:07.6110248+05:30:Thread#0:Scheduler: Test #15 is scheduled for thread
+2020-11-30T11:54:07.6110248+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:54:07.6150179+05:30:Thread#0: Test #13/0 is finished on thread #0 as Succeeded within 10.3314778 seconds
+2020-11-30T11:54:07.6200177+05:30:Thread#0: Test #15/0 is started on thread #0
+2020-11-30T11:54:07.6260180+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:54:12.2804917+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.7s)
+2020-11-30T11:54:12.2844923+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:54:14.5659436+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.3s)
+2020-11-30T11:54:14.5699433+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:54:14.8709623+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:54:14.8749638+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:54:17.8488482+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (3.0s)
+2020-11-30T11:54:17.8548480+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:54:17.8768502+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:17.8808500+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:54:17.8868502+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:17.8908508+05:30:Thread#0:B:When Clicked on Logout option
+2020-11-30T11:54:19.9561526+05:30:Thread#0:T:done: LogOutSteps.WhenClickedOnLogoutOption() (2.1s)
+2020-11-30T11:54:19.9601528+05:30:Thread#0:B:Then Should be Navigated to "Login" Page
+2020-11-30T11:54:19.9871550+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Login") (0.0s)
+2020-11-30T11:54:19.9911552+05:30:Thread#0:B:And "LogoutMessage" logout message should be displayed
+2020-11-30T11:54:20.0231568+05:30:Thread#0:T:done: LogOutSteps.ThenlogoutMessageShouldBeDisplayed("LogoutMessage") (0.0s)
+2020-11-30T11:54:20.0271570+05:30:Thread#0:B:And Close the Application
+2020-11-30T11:54:21.5682556+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.5s)
+2020-11-30T11:54:21.5762569+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:54:21.5762569+05:30:Thread#:Scheduler: testitem #17 from normal test queue 
+2020-11-30T11:54:21.5762569+05:30:Thread#0:Scheduler: considering testitem #17 for thread 0
+2020-11-30T11:54:21.5762569+05:30:Thread#0:TestItem#17:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:54:21.5762569+05:30:Thread#0:TestItem#17:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:54:21.5762569+05:30:Thread#0:TestItem#17:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:54:21.5762569+05:30:Thread#0:Scheduler: using testitem #17 for thread 0
+2020-11-30T11:54:21.5762569+05:30:Thread#0:Scheduler: Test #17 is scheduled for thread
+2020-11-30T11:54:21.5762569+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:54:21.5802567+05:30:Thread#0: Test #15/0 is finished on thread #0 as Succeeded within 13.960239 seconds
+2020-11-30T11:54:21.5852574+05:30:Thread#0: Test #17/0 is started on thread #0
+2020-11-30T11:54:21.5902572+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:54:26.2135535+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.6s)
+2020-11-30T11:54:26.2185547+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:54:29.6917713+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (3.5s)
+2020-11-30T11:54:29.6957706+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:54:30.0277929+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:54:30.0327922+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:54:35.2361285+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (5.2s)
+2020-11-30T11:54:35.2401256+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:54:35.2511270+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:35.2551272+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:54:35.2631267+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:35.2671283+05:30:Thread#0:B:Then Employee field should be populated with value "DefaultValue"
+2020-11-30T11:54:35.3231310+05:30:Thread#0:T:done: SelectEmployeeSteps.ThenEmployeeFieldShouldBePopulatedWithValue("DefaultValue") (0.1s)
+2020-11-30T11:54:35.3271317+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:54:38.7903503+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (3.5s)
+2020-11-30T11:54:38.7983507+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:54:38.7983507+05:30:Thread#:Scheduler: testitem #18 from normal test queue 
+2020-11-30T11:54:38.7983507+05:30:Thread#0:Scheduler: considering testitem #18 for thread 0
+2020-11-30T11:54:38.7983507+05:30:Thread#0:TestItem#18:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:54:38.7983507+05:30:Thread#0:TestItem#18:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:54:38.7983507+05:30:Thread#0:TestItem#18:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:54:38.7983507+05:30:Thread#0:Scheduler: using testitem #18 for thread 0
+2020-11-30T11:54:38.7983507+05:30:Thread#0:Scheduler: Test #18 is scheduled for thread
+2020-11-30T11:54:38.7983507+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:54:38.8023509+05:30:Thread#0: Test #17/0 is finished on thread #0 as Succeeded within 17.2170935 seconds
+2020-11-30T11:54:38.8083524+05:30:Thread#0: Test #18/0 is started on thread #0
+2020-11-30T11:54:38.8133513+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:54:43.3016360+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.5s)
+2020-11-30T11:54:43.3116356+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:54:45.3417669+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.0s)
+2020-11-30T11:54:45.3457667+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:54:45.6487857+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:54:45.6537868+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:54:49.7340273+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (4.1s)
+2020-11-30T11:54:49.7380275+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:54:49.7700293+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:49.7740299+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:54:49.7910302+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:54:49.7950304+05:30:Thread#0:B:When Click on employee drop down
+2020-11-30T11:54:49.9300384+05:30:Thread#0:T:done: SelectEmployeeSteps.WhenIClickOnEmployeeDropDown() (0.1s)
+2020-11-30T11:54:49.9340390+05:30:Thread#0:B:And Select employee "Suvathi"
+2020-11-30T11:55:10.7332562+05:30:Thread#0:T:done: SelectEmployeeSteps.WhenISelectEmployee("Suvathi") (20.8s)
+2020-11-30T11:55:10.7372573+05:30:Thread#0:B:Then Employee field should be populated with value "Suvathi"
+2020-11-30T11:55:10.7882603+05:30:Thread#0:T:done: SelectEmployeeSteps.ThenEmployeeFieldShouldBePopulatedWithValue("Suvathi") (0.0s)
+2020-11-30T11:55:10.7922601+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:55:14.5434748+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (3.7s)
+2020-11-30T11:55:14.5504751+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:55:14.5504751+05:30:Thread#:Scheduler: testitem #20 from normal test queue 
+2020-11-30T11:55:14.5504751+05:30:Thread#0:Scheduler: considering testitem #20 for thread 0
+2020-11-30T11:55:14.5504751+05:30:Thread#0:TestItem#20:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:55:14.5504751+05:30:Thread#0:TestItem#20:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:55:14.5504751+05:30:Thread#0:TestItem#20:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:55:14.5504751+05:30:Thread#0:Scheduler: using testitem #20 for thread 0
+2020-11-30T11:55:14.5504751+05:30:Thread#0:Scheduler: Test #20 is scheduled for thread
+2020-11-30T11:55:14.5504751+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:55:14.5554762+05:30:Thread#0: Test #18/0 is finished on thread #0 as Succeeded within 35.7471238 seconds
+2020-11-30T11:55:14.5594759+05:30:Thread#0: Test #20/0 is started on thread #0
+2020-11-30T11:55:14.5644761+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:55:19.9856798+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.4s)
+2020-11-30T11:55:19.9896804+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:55:21.8717887+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (1.9s)
+2020-11-30T11:55:21.8757880+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:55:22.1778063+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:55:22.1818073+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:55:25.0551879+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (2.9s)
+2020-11-30T11:55:25.0661888+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:55:25.0841887+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:25.0881897+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:55:25.0961901+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:25.1001907+05:30:Thread#0:B:Then Project field should be populated with value "DefaultValue"
+2020-11-30T11:55:25.1631934+05:30:Thread#0:T:done: SelectProjectSteps.ThenProjectFieldShouldBePopulatedWithValue("DefaultValue") (0.1s)
+2020-11-30T11:55:25.1671940+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:55:30.9465259+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (5.8s)
+2020-11-30T11:55:30.9535258+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:55:30.9535258+05:30:Thread#:Scheduler: testitem #21 from normal test queue 
+2020-11-30T11:55:30.9535258+05:30:Thread#0:Scheduler: considering testitem #21 for thread 0
+2020-11-30T11:55:30.9535258+05:30:Thread#0:TestItem#21:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:55:30.9535258+05:30:Thread#0:TestItem#21:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:55:30.9535258+05:30:Thread#0:TestItem#21:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:55:30.9535258+05:30:Thread#0:Scheduler: using testitem #21 for thread 0
+2020-11-30T11:55:30.9535258+05:30:Thread#0:Scheduler: Test #21 is scheduled for thread
+2020-11-30T11:55:30.9535258+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:55:30.9585264+05:30:Thread#0: Test #20/0 is finished on thread #0 as Succeeded within 16.3990505 seconds
+2020-11-30T11:55:30.9635262+05:30:Thread#0: Test #21/0 is started on thread #0
+2020-11-30T11:55:30.9685264+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:55:35.5708188+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.6s)
+2020-11-30T11:55:35.5748190+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:55:37.8008382+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.2s)
+2020-11-30T11:55:37.8048375+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:55:38.1098571+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:55:38.1138573+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:55:41.1440436+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (3.0s)
+2020-11-30T11:55:41.1490447+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:55:41.1570446+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:41.1610456+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:55:41.1790455+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:41.1840466+05:30:Thread#0:B:When Click on Project drop down
+2020-11-30T11:55:41.3620574+05:30:Thread#0:T:done: SelectProjectSteps.WhenIClickOnProjectDropDown() (0.2s)
+2020-11-30T11:55:41.3660571+05:30:Thread#0:B:And Select Project "ProjectIITM"
+2020-11-30T11:55:41.4930643+05:30:Thread#0:T:done: SelectProjectSteps.WhenISelectProject("ProjectIITM") (0.1s)
+2020-11-30T11:55:41.4970636+05:30:Thread#0:B:Then Project field should be populated with value "ProjectIITM"
+2020-11-30T11:55:41.5490676+05:30:Thread#0:T:done: SelectProjectSteps.ThenProjectFieldShouldBePopulatedWithValue("ProjectIITM") (0.0s)
+2020-11-30T11:55:41.5530673+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:55:47.3353971+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (5.8s)
+2020-11-30T11:55:47.3443998+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:55:47.3443998+05:30:Thread#:Scheduler: testitem #23 from normal test queue 
+2020-11-30T11:55:47.3443998+05:30:Thread#0:Scheduler: considering testitem #23 for thread 0
+2020-11-30T11:55:47.3443998+05:30:Thread#0:TestItem#23:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:55:47.3443998+05:30:Thread#0:TestItem#23:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:55:47.3443998+05:30:Thread#0:TestItem#23:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:55:47.3443998+05:30:Thread#0:Scheduler: using testitem #23 for thread 0
+2020-11-30T11:55:47.3443998+05:30:Thread#0:Scheduler: Test #23 is scheduled for thread
+2020-11-30T11:55:47.3443998+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:55:47.3494000+05:30:Thread#0: Test #21/0 is finished on thread #0 as Succeeded within 16.3858738 seconds
+2020-11-30T11:55:47.3534010+05:30:Thread#0: Test #23/0 is started on thread #0
+2020-11-30T11:55:47.3594008+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:55:52.0016894+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.6s)
+2020-11-30T11:55:52.0066901+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:55:54.3902402+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.4s)
+2020-11-30T11:55:54.3942412+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:55:54.7102592+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:55:54.7142599+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:55:57.9364452+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (3.2s)
+2020-11-30T11:55:57.9404454+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:55:57.9644460+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:57.9684470+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:55:57.9824476+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:55:57.9864478+05:30:Thread#0:B:When Click on View Report option
+2020-11-30T11:56:00.9946204+05:30:Thread#0:T:done: ViewReportSteps.WhenClickOnViewReportOption() (3.0s)
+2020-11-30T11:56:00.9986201+05:30:Thread#0:B:Then Reports should be displayed with in the default time frame
+2020-11-30T11:56:01.5436510+05:30:Thread#0:T:done: ViewReportSteps.ThenReportsShouldBeDisplayedWithInTheDefaultTimeFrame() (0.5s)
+2020-11-30T11:56:01.5476521+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:56:05.5098790+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (4.0s)
+2020-11-30T11:56:05.5168788+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:56:05.5168788+05:30:Thread#:Scheduler: testitem #24 from normal test queue 
+2020-11-30T11:56:05.5168788+05:30:Thread#0:Scheduler: considering testitem #24 for thread 0
+2020-11-30T11:56:05.5168788+05:30:Thread#0:TestItem#24:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T11:56:05.5168788+05:30:Thread#0:TestItem#24:runsOnOneOtherThreadSpecific:False
+2020-11-30T11:56:05.5168788+05:30:Thread#0:TestItem#24:runsOnOneOtherThreadUnspecific:False
+2020-11-30T11:56:05.5168788+05:30:Thread#0:Scheduler: using testitem #24 for thread 0
+2020-11-30T11:56:05.5168788+05:30:Thread#0:Scheduler: Test #24 is scheduled for thread
+2020-11-30T11:56:05.5168788+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T11:56:05.5218804+05:30:Thread#0: Test #23/0 is finished on thread #0 as Succeeded within 18.1684794 seconds
+2020-11-30T11:56:05.5258796+05:30:Thread#0: Test #24/0 is started on thread #0
+2020-11-30T11:56:05.5308799+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T11:56:10.1906984+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.7s)
+2020-11-30T11:56:10.1966973+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T11:56:12.1050459+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (1.9s)
+2020-11-30T11:56:12.1090470+05:30:Thread#0:B:And Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T11:56:12.4340649+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T11:56:12.4380655+05:30:Thread#0:B:And Click on login button
+2020-11-30T11:56:18.7424275+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (6.3s)
+2020-11-30T11:56:18.7464277+05:30:Thread#0:B:And Should be Navigated to "Report" Page
+2020-11-30T11:56:18.7644280+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:56:18.7684291+05:30:Thread#0:B:Given Should be Navigated to "Report" Page
+2020-11-30T11:56:18.7754289+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T11:56:18.7794295+05:30:Thread#0:B:When Enter starting date as "ProjectStartingDate"
+2020-11-30T11:56:19.0034427+05:30:Thread#0:T:done: ViewReportSteps.WhenIEnterStartingDateAs("ProjectStartingDate") (0.2s)
+2020-11-30T11:56:19.0074424+05:30:Thread#0:B:And Enter ending date as "ProjectEndingDate"
+2020-11-30T11:56:19.1994538+05:30:Thread#0:T:done: ViewReportSteps.WhenIEnterEndingDateAs("ProjectEndingDate") (0.2s)
+2020-11-30T11:56:19.2034526+05:30:Thread#0:B:And Click on View Report option
+2020-11-30T11:56:20.5145257+05:30:Thread#0:T:done: ViewReportSteps.WhenClickOnViewReportOption() (1.3s)
+2020-11-30T11:56:20.5195295+05:30:Thread#0:B:Then Reports should be displayed with in the specified time frame
+2020-11-30T11:56:20.5985334+05:30:Thread#0:T:done: ViewReportSteps.ThenReportsShouldBeDisplayedWithInTheDefaultTimeFrame() (0.1s)
+2020-11-30T11:56:20.6035336+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T11:56:24.4547552+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (3.8s)
+2020-11-30T11:56:24.4627556+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T11:56:24.4627556+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T11:56:24.4627556+05:30:Thread#0:Scheduler: enumerator for thread is at end
+2020-11-30T11:56:24.4627556+05:30:Thread#0:Scheduler: No more tests for thread
+2020-11-30T11:56:24.4667553+05:30:Thread#0: Test #24/0 is finished on thread #0 as Succeeded within 18.9408757 seconds
+2020-11-30T11:56:32.4870989+05:30:Trying to cancel thread
+2020-11-30T11:56:32.4880989+05:30:Thread cancelled
+2020-11-30T11:56:32.4950988+05:30:Thread#-1:Scheduler: get next test for thread -1
+2020-11-30T11:56:32.4950988+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T11:56:32.4950988+05:30:Thread#-1:Scheduler: enumerator for thread is at end
+2020-11-30T11:56:32.4980993+05:30;Thread#11;Info;test run finished
+2020-11-30T11:56:32.4990994+05:30;Thread#11;Info;publishing test results
+2020-11-30T11:56:32.5080998+05:30;Thread#11;Info;test results published
+2020-11-30T11:56:32.5080998+05:30;Thread#11;Info;generating reports
+2020-11-30T11:56:32.6791098+05:30;Thread#11;Info;Starting external report generation process
+2020-11-30T11:56:35.2532571+05:30;Thread#11;Info;Successfully generated reports.
+2020-11-30T11:56:35.2612579+05:30;Thread#11;Info;Successfully generated reports
+2020-11-30T11:56:35.2722592+05:30:Total: 13
+2020-11-30T11:56:35.2742584+05:30:Succeeded: 13
+2020-11-30T11:56:35.2752589+05:30:Ignored: 0
+2020-11-30T11:56:35.2762585+05:30:Pending: 0
+2020-11-30T11:56:35.2762585+05:30:Skipped: 0
+2020-11-30T11:56:35.2772590+05:30:Failed: 0
+2020-11-30T11:56:35.2902596+05:30;VSTestExecutionThread;Info;Adding attachments to VSTest
+2020-11-30T11:56:35.2902596+05:30;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T115246.html'
+========== End of log file ==========

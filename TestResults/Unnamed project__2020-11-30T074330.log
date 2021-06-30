@@ -1,0 +1,129 @@
+﻿2020-11-30T07:43:29.9632296+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T07:43:29.9632296+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T07:43:29.9632296+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T07:43:29.9632296+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T07:43:30.0702374+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:43:30.0702374+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T07:43:30.0702374+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T07:43:30.1572436+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T074330.log
+2020-11-30T07:43:30.1662441+05:30;Thread#11;Info;Checking activation
+2020-11-30T07:43:30.2822528+05:30;Thread#11;Info;Activated.
+2020-11-30T07:43:30.2832524+05:30;Thread#11;Info;Activation check completed
+2020-11-30T07:43:30.2832524+05:30;Thread#11;Info;Starting test run
+2020-11-30T07:43:30.3512575+05:30;Thread#11;Info;Discovering target: Default
+2020-11-30T07:43:30.3512575+05:30;Thread#11;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:43:30.9582994+05:30;Thread#11;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:43:30.9603000+05:30:Test Suite Dump
+2020-11-30T07:43:30.9623010+05:30:#0: Unnamed project/ - 
+2020-11-30T07:43:30.9623010+05:30:#1: Default - 
+2020-11-30T07:43:30.9623010+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T07:43:30.9623010+05:30:#11: Login - 
+2020-11-30T07:43:31.0203055+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T07:43:31.0213047+05:30:#13: Logging in with Invalid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+Invalid+credentials
+2020-11-30T07:43:31.0213047+05:30:End: Test Suite Dump
+2020-11-30T07:43:31.2113184+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T07:43:31.2133181+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T07:43:31.2133181+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T07:43:31.2183179+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T07:43:31.2183179+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T07:43:31.2183179+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T07:43:31.2183179+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T07:43:31.2213185+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T07:43:31.2253183+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T07:43:31.2313191+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T07:43:31.2343193+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T07:43:31.2383195+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T07:43:31.2403196+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T07:43:31.8883651+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T07:43:31.9013663+05:30:Thread#0:T:-> Using default config
+2020-11-30T07:43:33.0254459+05:30:Thread#0: Test #12/0 is started on thread #0
+2020-11-30T07:43:33.1024507+05:30:Thread#0:T:Before Feature
+2020-11-30T07:43:33.1314527+05:30:Thread#0:T:Before Scenario
+2020-11-30T07:43:33.1394536+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T07:43:39.2958863+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (6.1s)
+2020-11-30T07:43:39.2978859+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T07:43:43.7021968+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (4.4s)
+2020-11-30T07:43:43.7231988+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T07:43:44.1192272+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.4s)
+2020-11-30T07:43:44.1242274+05:30:Thread#0:B:And Click on login button
+2020-11-30T07:43:48.4905330+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (4.4s)
+2020-11-30T07:43:48.4955342+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T07:43:48.5035337+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T07:43:48.5135325+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T07:43:53.0438539+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (4.5s)
+2020-11-30T07:43:53.0728555+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T07:43:53.0728555+05:30:Thread#:Scheduler: testitem #13 from normal test queue 
+2020-11-30T07:43:53.0728555+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T07:43:53.0728555+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T07:43:53.0728555+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T07:43:53.0728555+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T07:43:53.0728555+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T07:43:53.0728555+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T07:43:53.0728555+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T07:43:53.0798564+05:30:Thread#0:T:After Scenario
+2020-11-30T07:43:53.1038577+05:30:Thread#0: Test #12/0 is finished on thread #0 as Succeeded within 20.0774121 seconds
+2020-11-30T07:43:53.1108586+05:30:Thread#0: Test #13/0 is started on thread #0
+2020-11-30T07:43:53.1158584+05:30:Thread#0:T:Before Scenario
+2020-11-30T07:43:53.1258598+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T07:44:01.7564666+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (8.6s)
+2020-11-30T07:44:01.7604664+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T07:44:08.8739672+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (7.1s)
+2020-11-30T07:44:08.8789679+05:30:Thread#0:B:When Enter "InCorrectUserr" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T07:44:11.7451688+05:30:Thread#0:T:error:   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T07:44:11.7491704+05:30:Thread#0:T:   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+2020-11-30T07:44:11.7531697+05:30:Thread#0:T:  Expected: True
+2020-11-30T07:44:11.7571699+05:30:Thread#0:T:  But was:  False
+2020-11-30T07:44:11.7611702+05:30:Thread#0:B:And Click on login button
+2020-11-30T07:44:11.7711716+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:11.7791721+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T07:44:11.7831718+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:11.7871729+05:30:Thread#0:B:And Close the Application
+2020-11-30T07:44:11.7911727+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:11.8021738+05:30:Thread#0:TestItem#13:Scheduler: reschedule tests for testitem #13
+2020-11-30T07:44:11.8061736+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T07:44:11.8061736+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #13
+2020-11-30T07:44:11.8061736+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T07:44:11.8061736+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T07:44:11.8061736+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T07:44:11.8061736+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T07:44:11.8061736+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T07:44:11.8061736+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T07:44:11.8061736+05:30:Thread#0:Scheduler: with testItemExecutionIndex 1
+2020-11-30T07:44:11.8101742+05:30:Thread#0:T:After Scenario
+2020-11-30T07:44:11.8151745+05:30:Thread#0: Test #13/0 is finished on thread #0 as Failed within 18.7043159 seconds
+2020-11-30T07:44:11.8201748+05:30:Thread#0: Test #13/1 is started on thread #0
+2020-11-30T07:44:11.8361757+05:30:Thread#0:T:Before Scenario
+2020-11-30T07:44:11.8411764+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T07:44:19.0114599+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (7.2s)
+2020-11-30T07:44:19.0254616+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T07:44:22.8007270+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (3.8s)
+2020-11-30T07:44:22.8047277+05:30:Thread#0:B:When Enter "InCorrectUserr" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T07:44:24.9318771+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T07:44:24.9348764+05:30:Thread#0:T:  1)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T07:44:24.9388780+05:30:Thread#0:T:   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+2020-11-30T07:44:24.9468784+05:30:Thread#0:T:  Expected: True
+2020-11-30T07:44:24.9498777+05:30:Thread#0:T:  But was:  False
+2020-11-30T07:44:24.9538784+05:30:Thread#0:T:  2)   Exception while Entering username and password, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T07:44:24.9578799+05:30:Thread#0:T:   at StepDefinations.LoginSteps.WhenIEnterInUserNameAndInPassword(String userName, String passWord) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 76
+2020-11-30T07:44:24.9618793+05:30:Thread#0:T:  Expected: True
+2020-11-30T07:44:24.9648785+05:30:Thread#0:T:  But was:  False
+2020-11-30T07:44:24.9688796+05:30:Thread#0:B:And Click on login button
+2020-11-30T07:44:24.9728808+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:24.9818799+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T07:44:24.9858810+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:24.9898813+05:30:Thread#0:B:And Close the Application
+2020-11-30T07:44:24.9938801+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T07:44:25.0048825+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T07:44:25.0048825+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #13
+2020-11-30T07:44:25.0048825+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T07:44:25.0048825+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T07:44:25.0048825+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T07:44:25.0048825+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T07:44:25.0048825+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T07:44:25.0048825+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T07:44:25.0048825+05:30:Thread#0:Scheduler: with testItemExecutionIndex 2
+2020-11-30T07:44:25.0128830+05:30:Thread#0:T:After Scenario
+2020-11-30T07:44:25.0168823+05:30:Thread#0: Test #13/1 is finished on thread #0 as Failed within 13.1967075 seconds
+2020-11-30T07:44:25.0218826+05:30:Thread#0: Test #13/2 is started on thread #0
+2020-11-30T07:44:25.0268842+05:30:Thread#0:T:Before Scenario
+2020-11-30T07:44:25.0298844+05:30:Thread#0:B:Given Browser is launced

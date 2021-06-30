@@ -1,0 +1,10 @@
+﻿2020-11-26T11:39:02.7479810+05:30;Thread#1;Info;Reading test run result from Json file "C:\Users\gnaneshwar.kondapaka\AppData\Local\Temp\2\tmp6665.tmp".
+2020-11-26T11:39:02.7779823+05:30;Thread#1;Info;Successfully read test run result from Json file "C:\Users\gnaneshwar.kondapaka\AppData\Local\Temp\2\tmp6665.tmp"
+2020-11-26T11:39:02.7779823+05:30;Thread#1;Info;Deserializing test run result
+2020-11-26T11:39:03.4540248+05:30;Thread#1;Info;Successfully deserialized test run result
+2020-11-26T11:39:03.4540248+05:30;Thread#1;Info;Loading test run result
+2020-11-26T11:39:03.4920271+05:30;Thread#1;Info;Successfully loaded test run result
+2020-11-26T11:39:03.5090280+05:30;Thread#1;Info;creating 1 report(s)
+2020-11-26T11:39:03.5090280+05:30;Thread#1;Info;generate Report using template ReportTemplate.cshtml
+2020-11-26T11:39:05.0211252+05:30;Thread#1;Info;Finished generating reports.
+========== End of log file ==========

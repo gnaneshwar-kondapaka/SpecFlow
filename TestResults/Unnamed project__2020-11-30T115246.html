@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>Unnamed project Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Unnamed project Test Execution Report</h1>
+        
+    <ul>
+        <li>Project: Unnamed project</li>
+        <li>Configuration: </li>
+        <li>Test Assemblies: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll</li>
+        <li>Start Time: 11/30/2020 11:52:46 AM</li>
+        <li>Duration: 00:03:45.5306490</li>
+        <li>Test Threads: 1</li>
+    </ul>
+
+
+        <h2>Result: all tests passed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="13 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>13</td>
+    <td>13</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: GGK-UPL-DEV-FC">#0</td>
+                            <td colspan="2">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Clicking on Admin Registration button from Home page (in Admin Registration)" 
+                href="#t1425838593.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Clicking on BuyNow button from Home Page (in Buy Now)" 
+                href="#t551525619.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Clicking on download pdf option from Report page (in Download Time Sheet)" 
+                href="#t580354071.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Clicking on Help Files button from Home page (in Help Files)" 
+                href="#t1537553591.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Logging in with valid credentials (in Login)" 
+                href="#t-1048477137.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="Logging in with Invalid credentials (in Login)" 
+                href="#t-665947594.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="Clicking on Logout option from Report page (in LogOut)" 
+                href="#t-171790009.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="By default the Employee field should be populated with &quot;All&quot; value (in Select Employee)" 
+                href="#t-1425899987.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 14px;" 
+                title="Select an Employee from the employee drop down. (in Select Employee)" 
+                href="#t-5204515.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="By default the Project field should be populated with &quot;All&quot; value (in Select Project)" 
+                href="#t-803055083.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Selecting the Project from the Project drop down (in Select Project)" 
+                href="#t-1300896538.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Viewing reports with default time frame (in ViewReport)" 
+                href="#t-797612020.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 7px;" 
+                title="Viewing reports with specifing the time frame (in ViewReport)" 
+                href="#t43407332.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                            <td class="scale-10-label" style="width: 70px;min-width: 70px;">0s</td>
+                        <td class="scale-10-label">174s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        
+    <h2>Test Result View</h2>
+    <div id="testview" class="viewbox">
+        <div id="bar-control">
+            <div id="bar-control-sort">
+                <label>sort by:</label>
+                <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+            </div>
+            <div id="bar-control-heights">
+                <label>heights:</label>
+                <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+            </div>
+        </div>
+        <table class="vertical-scale" cellpadding="0" cellspacing="0">
+            <tr class="scale-max">
+                <td class="left-padding scale-max-label">&nbsp;</td>
+                <td colspan="13">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+            <tr class="scale-mid">
+                <td class="left-padding scale-mid-label">&nbsp;</td>
+                <td colspan="13">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+            <tr class="scale-min">
+                <td class="left-padding scale-min-label">&nbsp;</td>
+                <td colspan="13">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+        </table>
+        <div class="scrollable">
+            <table class="testview-items" cellpadding="0" cellspacing="0">
+                <tr class="testview-items-row">
+                    <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="14.1361387" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="2.015">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 24px;"
+            title="Clicking on Admin Registration button from Home page (in Admin Registration)"
+            href="#t1425838593.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="11.5489872" data-sr-rescode="110" data-sr-order="1" data-sr-acttime="2.568">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 19px;"
+            title="Clicking on BuyNow button from Home Page (in Buy Now)"
+            href="#t551525619.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="17.2495728" data-sr-rescode="110" data-sr-order="2" data-sr-acttime="0.187">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 29px;"
+            title="Clicking on download pdf option from Report page (in Download Time Sheet)"
+            href="#t580354071.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="9.3115897" data-sr-rescode="110" data-sr-order="3" data-sr-acttime="0.903">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 16px;"
+            title="Clicking on Help Files button from Home page (in Help Files)"
+            href="#t1537553591.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="15.1646165" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="4.523">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 25px;"
+            title="Logging in with valid credentials (in Login)"
+            href="#t-1048477137.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="10.3314778" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="1.933">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 17px;"
+            title="Logging in with Invalid credentials (in Login)"
+            href="#t-665947594.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="13.960239" data-sr-rescode="110" data-sr-order="6" data-sr-acttime="2.069">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 23px;"
+            title="Clicking on Logout option from Report page (in LogOut)"
+            href="#t-171790009.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="17.2170935" data-sr-rescode="110" data-sr-order="7" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 29px;"
+            title="By default the Employee field should be populated with &quot;All&quot; value (in Select Employee)"
+            href="#t-1425899987.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="35.7471238" data-sr-rescode="110" data-sr-order="8" data-sr-acttime="20.943">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 60px;"
+            title="Select an Employee from the employee drop down. (in Select Employee)"
+            href="#t-5204515.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="16.3990505" data-sr-rescode="110" data-sr-order="9" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 28px;"
+            title="By default the Project field should be populated with &quot;All&quot; value (in Select Project)"
+            href="#t-803055083.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="16.3858738" data-sr-rescode="110" data-sr-order="10" data-sr-acttime="0.314">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 28px;"
+            title="Selecting the Project from the Project drop down (in Select Project)"
+            href="#t-1300896538.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="18.1684794" data-sr-rescode="110" data-sr-order="11" data-sr-acttime="3.012">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 30px;"
+            title="Viewing reports with default time frame (in ViewReport)"
+            href="#t-797612020.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="18.9408757" data-sr-rescode="110" data-sr-order="12" data-sr-acttime="1.74">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 32px;"
+            title="Viewing reports with specifing the time frame (in ViewReport)"
+            href="#t43407332.0">&nbsp;</a>
+    </td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="horizontal-scale">
+                    <td class="left-padding">&nbsp;</td>
+                    <td colspan="10">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+        
+        
+    <h2>Feature Summary</h2>
+    <table class="testEvents">
+            <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+
+            <tr>
+                <td><a href="#f-2127733588">Admin Registration</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:14.1361387</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f-1784734600">Buy Now</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:11.5489872</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f1421501894">Download Time Sheet</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:17.2495728</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f-1134730560">Help Files</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:09.3115897</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f1775250741">Login</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="2 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:25.4960943</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f1305645546">LogOut</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:13.9602390</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f1705654992">Select Employee</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="2 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:52.9642173</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f-1472303801">Select Project</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="2 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:32.7849243</td>
+
+            </tr>
+            <tr>
+                <td><a href="#f1437027429">ViewReport</a></td>
+                    <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="2 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:37.1093551</td>
+
+            </tr>
+    </table>
+
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f-2127733588" />
+            <h3>Feature: Admin Registration</h3>
+                <div class="description"><pre>	User should be Navigated to Admin registration page
+	by clicking on the Admin Registration button from Home page</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t1425838593.0">Scenario: Clicking on Admin Registration button from Home page</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:14.1361387</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f-1784734600" />
+            <h3>Feature: Buy Now</h3>
+                <div class="description"><pre>	User should be Navigated to QTP page
+	by clicking on the BuyNow button</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t551525619.0">Scenario: Clicking on BuyNow button from Home Page</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:11.5489872</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f1421501894" />
+            <h3>Feature: Download Time Sheet</h3>
+                <div class="description"><pre>	User should be able to download Time sheet 
+	in pdf format by clicking on the download pdf option.</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t580354071.0">Scenario: Clicking on download pdf option from Report page</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:17.2495728</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f-1134730560" />
+            <h3>Feature: Help Files</h3>
+                <div class="description"><pre>	User should be Navigated to Help Files page
+	by clicking on the Help Files button from Home page</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t1537553591.0">Scenario: Clicking on Help Files button from Home page</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:09.3115897</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f1775250741" />
+            <h3>Feature: Login</h3>
+                <div class="description"><pre>	User should be allowed to login only with valid
+	credentials.</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-1048477137.0">Scenario: Logging in with valid credentials</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:15.1646165</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-665947594.0">Scenario: Logging in with Invalid credentials</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:10.3314778</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f1305645546" />
+            <h3>Feature: LogOut</h3>
+                <div class="description"><pre>	User should be able to logout from the application
+	by clicking on the logout option</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-171790009.0">Scenario: Clicking on Logout option from Report page</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:13.9602390</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f1705654992" />
+            <h3>Feature: Select Employee</h3>
+                <div class="description"><pre>	User should be able to select employee in report page
+	from the employees drop down.</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-1425899987.0">Scenario: By default the Employee field should be populated with &quot;All&quot; value</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:17.2170935</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-5204515.0">Scenario: Select an Employee from the employee drop down.</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:35.7471238</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f-1472303801" />
+            <h3>Feature: Select Project</h3>
+                <div class="description"><pre>	User should be able to select project in report page
+	from the project drop down.</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-803055083.0">Scenario: By default the Project field should be populated with &quot;All&quot; value</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:16.3990505</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1300896538.0">Scenario: Selecting the Project from the Project drop down</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:16.3858738</td>
+
+                        
+                    </tr>
+            </table>
+            <a name="f1437027429" />
+            <h3>Feature: ViewReport</h3>
+                <div class="description"><pre>	In view report page when user clicks on veiew report 
+	option, all the reports in the specified time frame 
+	should be displayed.</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-797612020.0">Scenario: Viewing reports with default time frame</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:18.1684794</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t43407332.0">Scenario: Viewing reports with specifing the time frame</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:18.9408757</td>
+
+                        
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t1425838593.0" />
+            <h3>Scenario: Clicking on Admin Registration button from Home page (in ClassLibraryDotNetFrameWork, Admin Registration)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:52:49 AM</li>
+                <li>Execution time (sec): 14.1361387</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Admin Registration button from Home page] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (6.3s)</pre>
+                        </td>
+                        <td>Succeeded in 6.4s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Admin Registration button from Home page] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (4.0s)</pre>
+                        </td>
+                        <td>Succeeded in 3.993s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Click on Admin Registration button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Clicking on Admin Registration button from Home page] -->
+                            <pre class="log">done: AdminRegistrationSteps.WhenClickedOnAdminRegistrationButton() (2.0s)</pre>
+                        </td>
+                        <td>Succeeded in 2.015s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Should be Navigated to &quot;AdminRegistration&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Admin Registration button from Home page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;AdminRegistration&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.021s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Close the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Admin Registration button from Home page] -->
+                            <pre class="log">done: LoginSteps.ThenClosetheApplication() (1.6s)</pre>
+                        </td>
+                        <td>Succeeded in 1.663s</td>
+                    </tr>
+            </table>
+            <a name="t551525619.0" />
+            <h3>Scenario: Clicking on BuyNow button from Home Page (in ClassLibraryDotNetFrameWork, Buy Now)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:53:03 AM</li>
+                <li>Execution time (sec): 11.5489872</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on BuyNow button from Home Page] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.9s)</pre>
+                        </td>
+                        <td>Succeeded in 4.915s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on BuyNow button from Home Page] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.6s)</pre>
+                        </td>
+                        <td>Succeeded in 2.58s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Clicked on Buy Now button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Clicking on BuyNow button from Home Page] -->
+                            <pre class="log">done: BuyNowSteps.WhenClickedOnBuyNowButton() (2.6s)</pre>
+                        </td>
+                        <td>Succeeded in 2.568s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Should be Navigated to &quot;QTP&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on BuyNow button from Home Page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;QTP&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.028s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Close the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on BuyNow button from Home Page] -->
+                            <pre class="log">done: LoginSteps.ThenClosetheApplication() (1.4s)</pre>
+                        </td>
+                        <td>Succeeded in 1.446s</td>
+                    </tr>
+            </table>
+            <a name="t580354071.0" />
+            <h3>Scenario: Clicking on download pdf option from Report page (in ClassLibraryDotNetFrameWork, Download Time Sheet)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:53:15 AM</li>
+                <li>Execution time (sec): 17.2495728</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.9s)</pre>
+                        </td>
+                        <td>Succeeded in 4.864s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.0s)</pre>
+                        </td>
+                        <td>Succeeded in 1.965s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.4s)</pre>
+                        </td>
+                        <td>Succeeded in 0.383s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (5.3s)</pre>
+                        </td>
+                        <td>Succeeded in 5.293s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.027s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Click on download Time sheet option</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: DownloadTimeSheetSteps.WhenClickedOnDownloadPdfOption() (0.2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.187s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Report should be downloaded</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: DownloadTimeSheetSteps.ThenReportShouldBeDownloaded() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.079s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on download pdf option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (4.4s)</pre>
+                        </td>
+                        <td>Succeeded in 4.423s</td>
+                    </tr>
+            </table>
+            <a name="t1537553591.0" />
+            <h3>Scenario: Clicking on Help Files button from Home page (in ClassLibraryDotNetFrameWork, Help Files)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:53:32 AM</li>
+                <li>Execution time (sec): 9.3115897</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Help Files button from Home page] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.8s)</pre>
+                        </td>
+                        <td>Succeeded in 4.78s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Help Files button from Home page] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.1s)</pre>
+                        </td>
+                        <td>Succeeded in 2.09s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Clicked on Help Files button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Clicking on Help Files button from Home page] -->
+                            <pre class="log">done: HelpFilesSteps.WhenClickedOnHelpFilesButton() (0.9s)</pre>
+                        </td>
+                        <td>Succeeded in 0.903s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Should be Navigated to &quot;HelpFiles&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Help Files button from Home page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;HelpFiles&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.027s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Close the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Help Files button from Home page] -->
+                            <pre class="log">done: LoginSteps.ThenClosetheApplication() (1.5s)</pre>
+                        </td>
+                        <td>Succeeded in 1.498s</td>
+                    </tr>
+            </table>
+            <a name="t-1048477137.0" />
+            <h3>Scenario: Logging in with valid credentials (in ClassLibraryDotNetFrameWork, Login)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:53:42 AM</li>
+                <li>Execution time (sec): 15.1646165</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.6s)</pre>
+                        </td>
+                        <td>Succeeded in 4.562s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.4s)</pre>
+                        </td>
+                        <td>Succeeded in 2.398s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.315s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (4.2s)</pre>
+                        </td>
+                        <td>Succeeded in 4.208s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Logging in with valid credentials] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (3.6s)</pre>
+                        </td>
+                        <td>Succeeded in 3.653s</td>
+                    </tr>
+            </table>
+            <a name="t-665947594.0" />
+            <h3>Scenario: Logging in with Invalid credentials (in ClassLibraryDotNetFrameWork, Login)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:53:57 AM</li>
+                <li>Execution time (sec): 10.3314778</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.5s)</pre>
+                        </td>
+                        <td>Succeeded in 4.526s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.5s)</pre>
+                        </td>
+                        <td>Succeeded in 2.459s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Enter &quot;InCorrectUser&quot; in UserName field and &quot;InCorrectPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;InCorrectUser&quot;, &quot;InCorrectPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.342s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (1.6s)</pre>
+                        </td>
+                        <td>Succeeded in 1.591s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then &quot;LoginFailedMessage&quot; error message should be displayed in Login Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.ThenErrorMessageShouldBeDisplayedInLoginPage(&quot;LoginFailedMessage&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.041s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Close the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Logging in with Invalid credentials] -->
+                            <pre class="log">done: LoginSteps.ThenClosetheApplication() (1.4s)</pre>
+                        </td>
+                        <td>Succeeded in 1.36s</td>
+                    </tr>
+            </table>
+            <a name="t-171790009.0" />
+            <h3>Scenario: Clicking on Logout option from Report page (in ClassLibraryDotNetFrameWork, LogOut)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:54:07 AM</li>
+                <li>Execution time (sec): 13.960239</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.7s)</pre>
+                        </td>
+                        <td>Succeeded in 4.66s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.3s)</pre>
+                        </td>
+                        <td>Succeeded in 2.286s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.304s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (3.0s)</pre>
+                        </td>
+                        <td>Succeeded in 2.978s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.028s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.011s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Clicked on Logout option</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LogOutSteps.WhenClickedOnLogoutOption() (2.1s)</pre>
+                        </td>
+                        <td>Succeeded in 2.069s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Should be Navigated to &quot;Login&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Login&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.03s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And &quot;LogoutMessage&quot; logout message should be displayed</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LogOutSteps.ThenlogoutMessageShouldBeDisplayed(&quot;LogoutMessage&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.037s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Close the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Clicking on Logout option from Report page] -->
+                            <pre class="log">done: LoginSteps.ThenClosetheApplication() (1.5s)</pre>
+                        </td>
+                        <td>Succeeded in 1.545s</td>
+                    </tr>
+            </table>
+            <a name="t-1425899987.0" />
+            <h3>Scenario: By default the Employee field should be populated with &quot;All&quot; value (in ClassLibraryDotNetFrameWork, Select Employee)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:54:21 AM</li>
+                <li>Execution time (sec): 17.2170935</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.6s)</pre>
+                        </td>
+                        <td>Succeeded in 4.629s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (3.5s)</pre>
+                        </td>
+                        <td>Succeeded in 3.477s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.337s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (5.2s)</pre>
+                        </td>
+                        <td>Succeeded in 5.207s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.015s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.013s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Employee field should be populated with value &quot;DefaultValue&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: SelectEmployeeSteps.ThenEmployeeFieldShouldBePopulatedWithValue(&quot;DefaultValue&quot;) (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.059s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - By default the Employee field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (3.5s)</pre>
+                        </td>
+                        <td>Succeeded in 3.468s</td>
+                    </tr>
+            </table>
+            <a name="t-5204515.0" />
+            <h3>Scenario: Select an Employee from the employee drop down. (in ClassLibraryDotNetFrameWork, Select Employee)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:54:38 AM</li>
+                <li>Execution time (sec): 35.7471238</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.5s)</pre>
+                        </td>
+                        <td>Succeeded in 4.5s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.0s)</pre>
+                        </td>
+                        <td>Succeeded in 2.034s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.307s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (4.1s)</pre>
+                        </td>
+                        <td>Succeeded in 4.084s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.036s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.021s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Click on employee drop down</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: SelectEmployeeSteps.WhenIClickOnEmployeeDropDown() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.14s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Select employee &quot;Suvathi&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: SelectEmployeeSteps.WhenISelectEmployee(&quot;Suvathi&quot;) (20.8s)</pre>
+                        </td>
+                        <td>Succeeded in 20.803s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Employee field should be populated with value &quot;Suvathi&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: SelectEmployeeSteps.ThenEmployeeFieldShouldBePopulatedWithValue(&quot;Suvathi&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.054s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Select an Employee from the employee drop down.] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (3.7s)</pre>
+                        </td>
+                        <td>Succeeded in 3.755s</td>
+                    </tr>
+            </table>
+            <a name="t-803055083.0" />
+            <h3>Scenario: By default the Project field should be populated with &quot;All&quot; value (in ClassLibraryDotNetFrameWork, Select Project)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:55:14 AM</li>
+                <li>Execution time (sec): 16.3990505</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (5.4s)</pre>
+                        </td>
+                        <td>Succeeded in 5.426s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (1.9s)</pre>
+                        </td>
+                        <td>Succeeded in 1.887s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.305s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (2.9s)</pre>
+                        </td>
+                        <td>Succeeded in 2.884s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.023s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.011s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Project field should be populated with value &quot;DefaultValue&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: SelectProjectSteps.ThenProjectFieldShouldBePopulatedWithValue(&quot;DefaultValue&quot;) (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.068s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - By default the Project field should be populated with &quot;All&quot; value] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (5.8s)</pre>
+                        </td>
+                        <td>Succeeded in 5.782s</td>
+                    </tr>
+            </table>
+            <a name="t-1300896538.0" />
+            <h3>Scenario: Selecting the Project from the Project drop down (in ClassLibraryDotNetFrameWork, Select Project)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:55:30 AM</li>
+                <li>Execution time (sec): 16.3858738</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.6s)</pre>
+                        </td>
+                        <td>Succeeded in 4.608s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.2s)</pre>
+                        </td>
+                        <td>Succeeded in 2.229s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.309s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (3.0s)</pre>
+                        </td>
+                        <td>Succeeded in 3.035s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.013s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.022s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Click on Project drop down</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: SelectProjectSteps.WhenIClickOnProjectDropDown() (0.2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.183s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Select Project &quot;ProjectIITM&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: SelectProjectSteps.WhenISelectProject(&quot;ProjectIITM&quot;) (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.131s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Project field should be populated with value &quot;ProjectIITM&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: SelectProjectSteps.ThenProjectFieldShouldBePopulatedWithValue(&quot;ProjectIITM&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.055s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Selecting the Project from the Project drop down] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (5.8s)</pre>
+                        </td>
+                        <td>Succeeded in 5.787s</td>
+                    </tr>
+            </table>
+            <a name="t-797612020.0" />
+            <h3>Scenario: Viewing reports with default time frame (in ClassLibraryDotNetFrameWork, ViewReport)</h3>
+                <div class="description">
+                    tags: Reports
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:55:47 AM</li>
+                <li>Execution time (sec): 18.1684794</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.6s)</pre>
+                        </td>
+                        <td>Succeeded in 4.649s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (2.4s)</pre>
+                        </td>
+                        <td>Succeeded in 2.388s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.321s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (3.2s)</pre>
+                        </td>
+                        <td>Succeeded in 3.225s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.028s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.018s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Click on View Report option</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: ViewReportSteps.WhenClickOnViewReportOption() (3.0s)</pre>
+                        </td>
+                        <td>Succeeded in 3.012s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Reports should be displayed with in the default time frame</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: ViewReportSteps.ThenReportsShouldBeDisplayedWithInTheDefaultTimeFrame() (0.5s)</pre>
+                        </td>
+                        <td>Succeeded in 0.549s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Viewing reports with default time frame] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (4.0s)</pre>
+                        </td>
+                        <td>Succeeded in 3.966s</td>
+                    </tr>
+            </table>
+            <a name="t43407332.0" />
+            <h3>Scenario: Viewing reports with specifing the time frame (in ClassLibraryDotNetFrameWork, ViewReport)</h3>
+                <div class="description">
+                    tags: Reports
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/30/2020 11:56:05 AM</li>
+                <li>Execution time (sec): 18.9408757</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Browser is launced</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.GivenBrowserIsLaunced() (4.7s)</pre>
+                        </td>
+                        <td>Succeeded in 4.665s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Navigated to QualityPoint Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.GivenNavigatedToQualityPointApplication() (1.9s)</pre>
+                        </td>
+                        <td>Succeeded in 1.914s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter &quot;AdminUserName&quot; in UserName field and &quot;AdminPassword&quot; in Password field</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.WhenIEnterInUserNameAndInPassword(&quot;AdminUserName&quot;, &quot;AdminPassword&quot;) (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.329s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on login button</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.WhenClickOnLoginButton() (6.3s)</pre>
+                        </td>
+                        <td>Succeeded in 6.308s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.022s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given Should be Navigated to &quot;Report&quot; Page</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.ThenShouldBeNavigatedToPage(&quot;Report&quot;) (0.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.011s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When Enter starting date as &quot;ProjectStartingDate&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: ViewReportSteps.WhenIEnterStartingDateAs(&quot;ProjectStartingDate&quot;) (0.2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.228s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Enter ending date as &quot;ProjectEndingDate&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: ViewReportSteps.WhenIEnterEndingDateAs(&quot;ProjectEndingDate&quot;) (0.2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.197s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Click on View Report option</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: ViewReportSteps.WhenClickOnViewReportOption() (1.3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.315s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then Reports should be displayed with in the specified time frame</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: ViewReportSteps.ThenReportsShouldBeDisplayedWithInTheDefaultTimeFrame() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.084s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And Logout from the Application</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Viewing reports with specifing the time frame] -->
+                            <pre class="log">done: LoginSteps.ThenLogoutFromTheApplication() (3.8s)</pre>
+                        </td>
+                        <td>Succeeded in 3.855s</td>
+                    </tr>
+            </table>
+	</body>
+</html>

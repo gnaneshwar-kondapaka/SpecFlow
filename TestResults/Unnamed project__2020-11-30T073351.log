@@ -1,0 +1,116 @@
+﻿2020-11-30T07:33:51.5497522+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T07:33:51.5497522+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T07:33:51.5497522+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T07:33:51.5497522+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T07:33:51.6547589+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:33:51.6547589+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T07:33:51.6547589+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T07:33:51.7447637+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T073351.log
+2020-11-30T07:33:51.7537641+05:30;Thread#11;Info;Checking activation
+2020-11-30T07:33:51.8677707+05:30;Thread#11;Info;Activated.
+2020-11-30T07:33:51.8697708+05:30;Thread#11;Info;Activation check completed
+2020-11-30T07:33:51.8697708+05:30;Thread#11;Info;Starting test run
+2020-11-30T07:33:51.9407752+05:30;Thread#11;Info;Discovering target: Default
+2020-11-30T07:33:51.9417744+05:30;Thread#11;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:33:52.5178080+05:30;Thread#11;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T07:33:52.5188085+05:30:Test Suite Dump
+2020-11-30T07:33:52.5208090+05:30:#0: Unnamed project/ - 
+2020-11-30T07:33:52.5208090+05:30:#1: Default - 
+2020-11-30T07:33:52.5208090+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T07:33:52.5208090+05:30:#11: Login - 
+2020-11-30T07:33:52.5778114+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T07:33:52.5778114+05:30:#13: Logging in with Invalid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+Invalid+credentials
+2020-11-30T07:33:52.5778114+05:30:End: Test Suite Dump
+2020-11-30T07:33:52.6188141+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T07:33:52.6218138+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T07:33:52.6218138+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T07:33:52.6268149+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T07:33:52.6268149+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T07:33:52.6268149+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T07:33:52.6268149+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T07:33:52.6278145+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T07:33:52.6298141+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T07:33:52.6338147+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T07:33:52.6368153+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T07:33:52.6408155+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T07:33:52.6428151+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T07:33:53.3258542+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T07:33:53.3378551+05:30:Thread#0:T:-> Using default config
+2020-11-30T07:33:53.5928696+05:30:Thread#0:T:-> error: The binding methods for before/after feature and before/after test run events must be static! ClassLibraryDotNetFrameWork:ClassLibraryDotNetFrameWork.Hooks.Hooks1.BeforeFeature()
+2020-11-30T07:33:53.7048762+05:30:test thread #0 error: System.Runtime.Serialization.SerializationException: Unable to find assembly 'TechTalk.SpecFlow, Version=3.5.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41'.
+
+Server stack trace: 
+   at System.Runtime.Serialization.Formatters.Binary.BinaryAssemblyInfo.GetAssembly()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.GetType(BinaryAssemblyInfo assemblyInfo, String name)
+   at System.Runtime.Serialization.Formatters.Binary.ObjectMap..ctor(String objectName, String[] memberNames, BinaryTypeEnum[] binaryTypeEnumA, Object[] typeInformationA, Int32[] memberAssemIds, ObjectReader objectReader, Int32 objectId, BinaryAssemblyInfo assemblyInfo, SizedArray assemIdToAssemblyTable)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.ReadObjectWithMapTyped(BinaryObjectWithMapTyped record)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.ReadObjectWithMapTyped(BinaryHeaderEnum binaryHeaderEnum)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.Run()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CrossAppDomainSerializer.DeserializeObject(MemoryStream stm)
+   at System.Runtime.Remoting.Messaging.SmuggledMethodReturnMessage.FixupForNewAppDomain()
+   at System.Runtime.Remoting.Channels.CrossAppDomainSink.SyncProcessMessage(IMessage reqMsg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at TechTalk.SpecRun.Framework.ITestAssemblyExecutor.RunTests(TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost.RunTests(TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.TestThread.RunNonEmptyTestSuite(CancellationToken cancellationToken, TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.TestThread.Run(ITestExecutionManager executionManagerForRun, CancellationToken cancellationToken)
+   at TechTalk.SpecRun.Framework.AsyncTestThreadRunner.RunSync(TestExecutionManager executionManager, CancellationToken cancellationToken)
+2020-11-30T07:33:53.7068767+05:30:test thread error: TechTalk.SpecRun.Framework.SpecRunException: At least one test thread aborted. ---> System.Runtime.Serialization.SerializationException: Unable to find assembly 'TechTalk.SpecFlow, Version=3.5.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41'.
+
+Server stack trace: 
+   at System.Runtime.Serialization.Formatters.Binary.BinaryAssemblyInfo.GetAssembly()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.GetType(BinaryAssemblyInfo assemblyInfo, String name)
+   at System.Runtime.Serialization.Formatters.Binary.ObjectMap..ctor(String objectName, String[] memberNames, BinaryTypeEnum[] binaryTypeEnumA, Object[] typeInformationA, Int32[] memberAssemIds, ObjectReader objectReader, Int32 objectId, BinaryAssemblyInfo assemblyInfo, SizedArray assemIdToAssemblyTable)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.ReadObjectWithMapTyped(BinaryObjectWithMapTyped record)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.ReadObjectWithMapTyped(BinaryHeaderEnum binaryHeaderEnum)
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.Run()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CrossAppDomainSerializer.DeserializeObject(MemoryStream stm)
+   at System.Runtime.Remoting.Messaging.SmuggledMethodReturnMessage.FixupForNewAppDomain()
+   at System.Runtime.Remoting.Channels.CrossAppDomainSink.SyncProcessMessage(IMessage reqMsg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at TechTalk.SpecRun.Framework.ITestAssemblyExecutor.RunTests(TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost.RunTests(TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.TestThread.RunNonEmptyTestSuite(CancellationToken cancellationToken, TestThreadState testThreadState)
+   at TechTalk.SpecRun.Framework.TestThread.Run(ITestExecutionManager executionManagerForRun, CancellationToken cancellationToken)
+   at TechTalk.SpecRun.Framework.AsyncTestThreadRunner.RunSync(TestExecutionManager executionManager, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+2020-11-30T07:33:53.7068767+05:30:Trying to cancel thread
+2020-11-30T07:33:53.7068767+05:30:Thread cancelled
+2020-11-30T07:33:53.7178772+05:30:Thread#-1: Test #12/0 is started on thread #-1
+2020-11-30T07:33:53.7188768+05:30:Thread#-1: Test #12/0 is finished on thread #-1 as Skipped within 0.0009996 seconds
+2020-11-30T07:33:53.7248775+05:30:Thread#-1:Scheduler: get next test for thread -1
+2020-11-30T07:33:53.7248775+05:30:Thread#:Scheduler: testitem #13 from normal test queue 
+2020-11-30T07:33:53.7248775+05:30:Thread#-1:Scheduler: considering testitem #13 for thread -1
+2020-11-30T07:33:53.7248775+05:30:Thread#-1:Scheduler: using testitem #13 for thread -1
+2020-11-30T07:33:53.7248775+05:30:Thread#-1:Scheduler: Test #13 is scheduled for thread
+2020-11-30T07:33:53.7248775+05:30:Thread#-1: Test #13/0 is started on thread #-1
+2020-11-30T07:33:53.7248775+05:30:Thread#-1: Test #13/0 is finished on thread #-1 as Skipped within 0 seconds
+2020-11-30T07:33:53.7258771+05:30:Thread#-1:Scheduler: get next test for thread -1
+2020-11-30T07:33:53.7258771+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T07:33:53.7258771+05:30:Thread#-1:Scheduler: enumerator for thread is at end
+2020-11-30T07:33:53.8508847+05:30;Thread#11;Info;test run finished
+2020-11-30T07:33:53.8508847+05:30;Thread#11;Info;publishing test results
+2020-11-30T07:33:53.8638853+05:30;Thread#11;Info;test results published
+2020-11-30T07:33:53.8648853+05:30;Thread#11;Info;generating reports
+2020-11-30T07:33:54.1078993+05:30;Thread#11;Info;Starting external report generation process
+2020-11-30T07:33:57.2120773+05:30;Thread#11;Info;Successfully generated reports.
+2020-11-30T07:33:57.2180776+05:30;Thread#11;Info;Successfully generated reports
+2020-11-30T07:33:57.2490803+05:30:Total: 2
+2020-11-30T07:33:57.2520799+05:30:Succeeded: 0
+2020-11-30T07:33:57.2520799+05:30:Ignored: 0
+2020-11-30T07:33:57.2530795+05:30:Pending: 0
+2020-11-30T07:33:57.2530795+05:30:Skipped: 2
+2020-11-30T07:33:57.2540796+05:30:Failed: 0
+2020-11-30T07:33:57.2580797+05:30;VSTestExecutionThread;Info;Adding attachments to VSTest
+2020-11-30T07:33:57.2580797+05:30;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T073351.html'
+========== End of log file ==========

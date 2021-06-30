@@ -1,0 +1,235 @@
+﻿2020-11-30T12:31:57.7489107+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T12:31:57.7489107+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T12:31:57.7489107+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T12:31:57.7499117+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T12:31:57.8349178+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:31:57.8359178+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T12:31:57.8359178+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T12:31:57.9059239+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T123157.log
+2020-11-30T12:31:57.9179228+05:30;Thread#10;Info;Checking activation
+2020-11-30T12:31:58.0199303+05:30;Thread#10;Info;Activated.
+2020-11-30T12:31:58.0209308+05:30;Thread#10;Info;Activation check completed
+2020-11-30T12:31:58.0209308+05:30;Thread#10;Info;Starting test run
+2020-11-30T12:31:58.0849348+05:30;Thread#10;Info;Discovering target: Default
+2020-11-30T12:31:58.0849348+05:30;Thread#10;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:31:58.5779672+05:30;Thread#10;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:31:58.5789700+05:30:Test Suite Dump
+2020-11-30T12:31:58.5809701+05:30:#0: Unnamed project/ - 
+2020-11-30T12:31:58.5809701+05:30:#1: Default - 
+2020-11-30T12:31:58.5809701+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T12:31:58.5809701+05:30:#11: Login - 
+2020-11-30T12:31:58.6289732+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T12:31:58.6289732+05:30:#13: Logging in with Invalid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+Invalid+credentials
+2020-11-30T12:31:58.6289732+05:30:End: Test Suite Dump
+2020-11-30T12:31:58.6869778+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:31:58.6919781+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T12:31:58.6919781+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T12:31:58.6969779+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T12:31:58.6969779+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T12:31:58.6969779+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T12:31:58.6969779+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T12:31:58.6979784+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T12:31:58.6989780+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T12:31:58.7029787+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T12:31:58.7049788+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T12:31:58.7089790+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T12:31:58.7119792+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T12:31:59.3750251+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T12:31:59.3880267+05:30:Thread#0:T:-> Using default config
+2020-11-30T12:32:00.5211064+05:30:Thread#0: Test #12/0 is started on thread #0
+2020-11-30T12:32:00.5581107+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T12:32:15.2501426+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (14.6s)
+2020-11-30T12:32:15.2521427+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T12:32:25.5268653+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (10.3s)
+2020-11-30T12:32:25.5368672+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T12:32:26.3119212+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.8s)
+2020-11-30T12:32:26.3159209+05:30:Thread#0:B:And Click on login button
+2020-11-30T12:32:38.5477813+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (12.2s)
+2020-11-30T12:32:38.5517819+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T12:32:38.5717835+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T12:32:38.5757837+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T12:33:40.6045450+05:30:Thread#0:T:error: The HTTP request to the remote WebDriver server for URL http://localhost:64353/session/07ce0a7509ed70ac1922c7f05c27e2aa/screenshot timed out after 60 seconds.
+2020-11-30T12:33:40.6695491+05:30:Thread#0:TestItem#12:Scheduler: reschedule tests for testitem #12
+2020-11-30T12:33:40.6765499+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:33:40.6765499+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #12
+2020-11-30T12:33:40.6765499+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T12:33:40.6765499+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T12:33:40.6765499+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T12:33:40.6765499+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T12:33:40.6765499+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T12:33:40.6765499+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T12:33:40.6765499+05:30:Thread#0:Scheduler: with testItemExecutionIndex 1
+2020-11-30T12:33:40.7035517+05:30:Thread#0: Test #12/0 is finished on thread #0 as Failed within 100.1814453 seconds
+2020-11-30T12:33:40.7105521+05:30:Thread#0: Test #12/1 is started on thread #0
+2020-11-30T12:33:40.7225536+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T12:33:46.4319127+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.7s)
+2020-11-30T12:33:46.4359133+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T12:33:50.4108737+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (4.0s)
+2020-11-30T12:33:50.4148743+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T12:33:50.8739029+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.5s)
+2020-11-30T12:33:50.8789044+05:30:Thread#0:B:And Click on login button
+2020-11-30T12:33:54.9551585+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (4.1s)
+2020-11-30T12:33:54.9591600+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T12:33:54.9671595+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T12:33:54.9711601+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T12:34:00.2404967+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T12:34:00.2444973+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:00.2484975+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:00.2524977+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:00.2554970+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:00.2594989+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:00.2634982+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:00.2664975+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:00.2704977+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:00.2744992+05:30:Thread#0:T:  3)   Exception while closing the browser : NUnit.Framework.AssertionException: Multiple failures or warnings in test:
+2020-11-30T12:34:00.2784994+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:00.2814982+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:00.2854998+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:00.2895004+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:00.2935002+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:00.2964994+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:00.3004996+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:00.3045012+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:00.3085014+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 394
+2020-11-30T12:34:00.3115006+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 382
+2020-11-30T12:34:00.3155017+05:30:Thread#0:T:   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 240
+2020-11-30T12:34:00.3195024+05:30:Thread#0:T:   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 128
+2020-11-30T12:34:00.3235026+05:30:Thread#0:T:   at StepDefinations.LoginSteps.ThenLogoutFromTheApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 127
+2020-11-30T12:34:00.3265018+05:30:Thread#0:T:  Expected: True
+2020-11-30T12:34:00.3305025+05:30:Thread#0:T:  But was:  False
+2020-11-30T12:34:00.3425030+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:34:00.3425030+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #12
+2020-11-30T12:34:00.3425030+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T12:34:00.3425030+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T12:34:00.3425030+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T12:34:00.3425030+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T12:34:00.3425030+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T12:34:00.3425030+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T12:34:00.3425030+05:30:Thread#0:Scheduler: with testItemExecutionIndex 2
+2020-11-30T12:34:00.3465032+05:30:Thread#0: Test #12/1 is finished on thread #0 as Failed within 19.6359511 seconds
+2020-11-30T12:34:00.3525040+05:30:Thread#0: Test #12/2 is started on thread #0
+2020-11-30T12:34:00.3565042+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T12:34:05.2508164+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (4.9s)
+2020-11-30T12:34:05.2548166+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T12:34:08.4559643+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (3.2s)
+2020-11-30T12:34:08.4599640+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T12:34:08.7699838+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.3s)
+2020-11-30T12:34:08.7739840+05:30:Thread#0:B:And Click on login button
+2020-11-30T12:34:11.7324394+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (3.0s)
+2020-11-30T12:34:11.7364396+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T12:34:11.7454404+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T12:34:11.7504416+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T12:34:18.2350439+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T12:34:18.2390441+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:18.2430443+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.2460440+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.2500442+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:18.2540453+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.2580455+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.2610447+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.2650454+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.2690460+05:30:Thread#0:T:  3)   Exception while closing the browser : NUnit.Framework.AssertionException: Multiple failures or warnings in test:
+2020-11-30T12:34:18.2730462+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:18.2760459+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.2800466+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.2840472+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:18.2870465+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.2910471+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.2950478+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.2990475+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.3020472+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 394
+2020-11-30T12:34:18.3060483+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 382
+2020-11-30T12:34:18.3100494+05:30:Thread#0:T:   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 240
+2020-11-30T12:34:18.3140492+05:30:Thread#0:T:   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 128
+2020-11-30T12:34:18.3170484+05:30:Thread#0:T:   at StepDefinations.LoginSteps.ThenLogoutFromTheApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 127
+2020-11-30T12:34:18.3210491+05:30:Thread#0:T:  Expected: True
+2020-11-30T12:34:18.3250497+05:30:Thread#0:T:  But was:  False
+2020-11-30T12:34:18.3300499+05:30:Thread#0:T:  4)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.3330501+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.3370498+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.3410505+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.3450502+05:30:Thread#0:T:  5)   Exception while closing the browser : NUnit.Framework.AssertionException: Multiple failures or warnings in test:
+2020-11-30T12:34:18.3480499+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:18.3520510+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.3560512+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.3590518+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:18.3630525+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.3670522+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.3700519+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.3740526+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.3780528+05:30:Thread#0:T:  3)   Exception while closing the browser : NUnit.Framework.AssertionException: Multiple failures or warnings in test:
+2020-11-30T12:34:18.3810520+05:30:Thread#0:T:  1)   Expected string length 39 but was 48. Strings differ at index 0.
+2020-11-30T12:34:18.3850536+05:30:Thread#0:T:  Expected: "Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.3890538+05:30:Thread#0:T:  But was:  "Report - Online Timesheet • Qualitypointtech.com"
+2020-11-30T12:34:18.3920526+05:30:Thread#0:T:  -----------^
+2020-11-30T12:34:18.3960541+05:30:Thread#0:T:  2)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.4000543+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.4030540+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.4070547+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.4110549+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 394
+2020-11-30T12:34:18.4140546+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 382
+2020-11-30T12:34:18.4180552+05:30:Thread#0:T:   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 240
+2020-11-30T12:34:18.4280552+05:30:Thread#0:T:   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 128
+2020-11-30T12:34:18.4320559+05:30:Thread#0:T:   at StepDefinations.LoginSteps.ThenLogoutFromTheApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 127
+2020-11-30T12:34:18.4370566+05:30:Thread#0:T:  Expected: True
+2020-11-30T12:34:18.4410572+05:30:Thread#0:T:  But was:  False
+2020-11-30T12:34:18.4450574+05:30:Thread#0:T:  4)   Expected string length 57 but was 56. Strings differ at index 1.
+2020-11-30T12:34:18.4480571+05:30:Thread#0:T:  Expected: "Y ou have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.4520573+05:30:Thread#0:T:  But was:  "You have been logged out. Thank you for using Timesheet."
+2020-11-30T12:34:18.4560580+05:30:Thread#0:T:  ------------^
+2020-11-30T12:34:18.4600582+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 394
+2020-11-30T12:34:18.4640593+05:30:Thread#0:T:   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 382
+2020-11-30T12:34:18.4680590+05:30:Thread#0:T:   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 240
+2020-11-30T12:34:18.4710587+05:30:Thread#0:T:   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 128
+2020-11-30T12:34:18.4750594+05:30:Thread#0:T:   at StepDefinations.LoginSteps.ThenLogoutFromTheApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 127
+2020-11-30T12:34:18.4790596+05:30:Thread#0:T:  Expected: True
+2020-11-30T12:34:18.4820588+05:30:Thread#0:T:  But was:  False
+2020-11-30T12:34:18.4910602+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:34:18.4910602+05:30:Thread#:Scheduler: testitem #13 from normal test queue 
+2020-11-30T12:34:18.4910602+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T12:34:18.4910602+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T12:34:18.4910602+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T12:34:18.4910602+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T12:34:18.4910602+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T12:34:18.4910602+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T12:34:18.4910602+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T12:34:18.4950599+05:30:Thread#0: Test #12/2 is finished on thread #0 as Failed within 18.1425559 seconds
+2020-11-30T12:34:18.5020611+05:30:Thread#0: Test #13/0 is started on thread #0
+2020-11-30T12:34:18.5070605+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T12:34:23.4618713+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.0s)
+2020-11-30T12:34:23.4658715+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T12:34:26.8704560+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (3.4s)
+2020-11-30T12:34:26.8744558+05:30:Thread#0:B:When Enter "InCorrectUser" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T12:34:27.2724817+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("InCorrectUser", "InCorrectPassword") (0.4s)
+2020-11-30T12:34:27.2764819+05:30:Thread#0:B:And Click on login button
+2020-11-30T12:34:29.0035859+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (1.7s)
+2020-11-30T12:34:29.0075860+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T12:34:29.0665904+05:30:Thread#0:T:done: LoginSteps.ThenErrorMessageShouldBeDisplayedInLoginPage("LoginFailedMessage") (0.1s)
+2020-11-30T12:34:29.0705901+05:30:Thread#0:B:And Close the Application
+2020-11-30T12:34:30.5056820+05:30:Thread#0:T:done: LoginSteps.ThenClosetheApplication() (1.4s)
+2020-11-30T12:34:30.5136820+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:34:30.5136820+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T12:34:30.5136820+05:30:Thread#0:Scheduler: enumerator for thread is at end
+2020-11-30T12:34:30.5136820+05:30:Thread#0:Scheduler: No more tests for thread
+2020-11-30T12:34:30.5186822+05:30:Thread#0: Test #13/0 is finished on thread #0 as Succeeded within 12.0166211 seconds
+2020-11-30T12:34:38.0221632+05:30:Trying to cancel thread
+2020-11-30T12:34:38.0221632+05:30:Thread cancelled
+2020-11-30T12:34:38.0311637+05:30:Thread#-1:Scheduler: get next test for thread -1
+2020-11-30T12:34:38.0311637+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T12:34:38.0311637+05:30:Thread#-1:Scheduler: enumerator for thread is at end
+2020-11-30T12:34:38.0471640+05:30;Thread#10;Info;test run finished
+2020-11-30T12:34:38.0481641+05:30;Thread#10;Info;publishing test results
+2020-11-30T12:34:38.0591650+05:30;Thread#10;Info;test results published
+2020-11-30T12:34:38.0591650+05:30;Thread#10;Info;generating reports
+2020-11-30T12:34:38.2181752+05:30;Thread#10;Info;Starting external report generation process
+2020-11-30T12:34:41.0313493+05:30;Thread#10;Info;Successfully generated reports.
+2020-11-30T12:34:41.0403497+05:30;Thread#10;Info;Successfully generated reports
+2020-11-30T12:34:41.0573510+05:30:Total: 2 (test executions: 4)
+2020-11-30T12:34:41.0593516+05:30:Succeeded: 1
+2020-11-30T12:34:41.0593516+05:30:Ignored: 0
+2020-11-30T12:34:41.0603507+05:30:Pending: 0
+2020-11-30T12:34:41.0603507+05:30:Skipped: 0
+2020-11-30T12:34:41.0613508+05:30:Failed: 1
+2020-11-30T12:34:41.0763520+05:30;VSTestExecutionThread;Info;Adding attachments to VSTest
+2020-11-30T12:34:41.0763520+05:30;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T123157.html'
+========== End of log file ==========

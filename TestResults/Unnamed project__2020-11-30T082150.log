@@ -1,0 +1,231 @@
+﻿2020-11-30T08:21:50.6419375+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T08:21:50.6419375+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T08:21:50.6419375+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T08:21:50.6429380+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T08:21:50.7299437+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T08:21:50.7299437+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T08:21:50.7309437+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T08:21:50.9689586+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T082150.log
+2020-11-30T08:21:51.0079610+05:30;Thread#11;Info;Checking activation
+2020-11-30T08:21:51.1119680+05:30;Thread#11;Info;Activated.
+2020-11-30T08:21:51.1119680+05:30;Thread#11;Info;Activation check completed
+2020-11-30T08:21:51.1119680+05:30;Thread#11;Info;Starting test run
+2020-11-30T08:21:51.2149748+05:30;Thread#11;Info;Discovering target: Default
+2020-11-30T08:21:51.2169749+05:30;Thread#11;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T08:21:51.8470172+05:30;Thread#11;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T08:21:51.8490178+05:30:Test Suite Dump
+2020-11-30T08:21:51.8510174+05:30:#0: Unnamed project/ - 
+2020-11-30T08:21:51.8510174+05:30:#1: Default - 
+2020-11-30T08:21:51.8510174+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T08:21:51.8510174+05:30:#11: Login - 
+2020-11-30T08:21:51.9120217+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T08:21:51.9120217+05:30:#13: Logging in with Invalid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+Invalid+credentials
+2020-11-30T08:21:51.9120217+05:30:End: Test Suite Dump
+2020-11-30T08:21:51.9860267+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:21:51.9880273+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T08:21:51.9880273+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T08:21:51.9980278+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:21:51.9980278+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:21:51.9980278+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:21:51.9980278+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T08:21:51.9990279+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T08:21:52.0000280+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T08:21:52.0030281+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T08:21:52.0060283+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T08:21:52.0100285+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T08:21:52.0120286+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T08:21:52.5930685+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T08:21:52.6080706+05:30:Thread#0:T:-> Using default config
+2020-11-30T08:21:53.9041536+05:30:Thread#0: Test #12/0 is started on thread #0
+2020-11-30T08:21:53.9371552+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T08:21:59.9205515+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.9s)
+2020-11-30T08:21:59.9215516+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T08:22:02.1215757+05:30:Thread#0:T:error:   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:02.1345755+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:02.1385775+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:02.1425772+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:02.1465765+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:02.1515777+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T08:22:02.1595785+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:02.1725792+05:30:Thread#0:B:And Click on login button
+2020-11-30T08:22:02.1775794+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:02.1865808+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T08:22:02.1905814+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:02.1995810+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T08:22:02.2035811+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:02.2235817+05:30:Thread#0:TestItem#12:Scheduler: reschedule tests for testitem #12
+2020-11-30T08:22:02.2355832+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:22:02.2355832+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #12
+2020-11-30T08:22:02.2355832+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T08:22:02.2355832+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:22:02.2355832+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:22:02.2355832+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:22:02.2355832+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T08:22:02.2355832+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T08:22:02.2355832+05:30:Thread#0:Scheduler: with testItemExecutionIndex 1
+2020-11-30T08:22:02.2625845+05:30:Thread#0: Test #12/0 is finished on thread #0 as Failed within 8.3574304 seconds
+2020-11-30T08:22:02.2705854+05:30:Thread#0: Test #12/1 is started on thread #0
+2020-11-30T08:22:02.2755861+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T08:22:07.3489168+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.1s)
+2020-11-30T08:22:07.3539184+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T08:22:09.1960417+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T08:22:09.2000410+05:30:Thread#0:T:  1)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:09.2040421+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:09.2080423+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:09.2120439+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:09.2160432+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:09.2190424+05:30:Thread#0:T:  2)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:09.2230431+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:09.2310448+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:09.2340436+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:09.2380447+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:09.2420445+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T08:22:09.2460451+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:09.2500453+05:30:Thread#0:B:And Click on login button
+2020-11-30T08:22:09.2530441+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:09.2610445+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T08:22:09.2650465+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:09.2690462+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T08:22:09.2720459+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:09.2810468+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:22:09.2810468+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #12
+2020-11-30T08:22:09.2810468+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T08:22:09.2810468+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:22:09.2810468+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:22:09.2810468+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:22:09.2810468+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T08:22:09.2810468+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T08:22:09.2810468+05:30:Thread#0:Scheduler: with testItemExecutionIndex 2
+2020-11-30T08:22:09.2850475+05:30:Thread#0: Test #12/1 is finished on thread #0 as Failed within 7.0144621 seconds
+2020-11-30T08:22:09.2960471+05:30:Thread#0: Test #12/2 is started on thread #0
+2020-11-30T08:22:09.3010487+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T08:22:14.6809622+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.4s)
+2020-11-30T08:22:14.6849611+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T08:22:21.8313722+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T08:22:21.8373729+05:30:Thread#0:T:  1)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:21.8413731+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:21.8453733+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:21.8483726+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:21.8523737+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:21.8563734+05:30:Thread#0:T:  2)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:21.8603741+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:21.8633738+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:21.8693745+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:21.8723742+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:21.8763744+05:30:Thread#0:T:  3)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:21.8803755+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:21.8843752+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:21.8883759+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:21.8923761+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:21.8953758+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T08:22:21.8993760+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:21.9033775+05:30:Thread#0:B:And Click on login button
+2020-11-30T08:22:21.9073773+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:21.9113770+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T08:22:21.9173764+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:21.9213775+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T08:22:21.9253791+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:21.9333781+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:22:21.9333781+05:30:Thread#:Scheduler: testitem #13 from normal test queue 
+2020-11-30T08:22:21.9333781+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T08:22:21.9333781+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:22:21.9333781+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:22:21.9333781+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:22:21.9333781+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T08:22:21.9333781+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T08:22:21.9333781+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T08:22:21.9373783+05:30:Thread#0: Test #12/2 is finished on thread #0 as Failed within 12.6413312 seconds
+2020-11-30T08:22:21.9463797+05:30:Thread#0: Test #13/0 is started on thread #0
+2020-11-30T08:22:21.9513808+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T08:22:26.9146606+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.0s)
+2020-11-30T08:22:26.9186603+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T08:22:28.7307791+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T08:22:28.7347789+05:30:Thread#0:T:  1)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:28.7387795+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:28.7427798+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:28.7507802+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:28.7537795+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:28.7577810+05:30:Thread#0:T:  2)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:28.7617813+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:28.7657819+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:28.7697817+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:28.7727810+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:28.7807819+05:30:Thread#0:T:  3)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:28.7857826+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:28.7897828+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:28.7937835+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:28.7977837+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:28.8017839+05:30:Thread#0:T:  4)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:28.8047837+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:28.8137851+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:28.8167839+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:28.8207850+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:28.8247852+05:30:Thread#0:B:When Enter "InCorrectUserr" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T08:22:28.8287855+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:28.8327861+05:30:Thread#0:B:And Click on login button
+2020-11-30T08:22:28.8367863+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:28.8457873+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T08:22:28.8497875+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:28.8527868+05:30:Thread#0:B:And Close the Application
+2020-11-30T08:22:28.8567870+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:28.8627873+05:30:Thread#0:TestItem#13:Scheduler: reschedule tests for testitem #13
+2020-11-30T08:22:28.8657880+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:22:28.8657880+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #13
+2020-11-30T08:22:28.8657880+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T08:22:28.8667885+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:22:28.8667885+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:22:28.8667885+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:22:28.8667885+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T08:22:28.8667885+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T08:22:28.8667885+05:30:Thread#0:Scheduler: with testItemExecutionIndex 1
+2020-11-30T08:22:28.8707887+05:30:Thread#0: Test #13/0 is finished on thread #0 as Failed within 6.924409 seconds
+2020-11-30T08:22:28.8797887+05:30:Thread#0: Test #13/1 is started on thread #0
+2020-11-30T08:22:28.8837894+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T08:22:35.0029228+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (6.1s)
+2020-11-30T08:22:35.0069230+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T08:22:37.6090936+05:30:Thread#0:T:error: Multiple failures or warnings in test:
+2020-11-30T08:22:37.6130938+05:30:Thread#0:T:  1)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:37.6170949+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:37.6210947+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:37.6290956+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:37.6330958+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:37.6370965+05:30:Thread#0:T:  2)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:37.6400958+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:37.6440964+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:37.6480966+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:37.6510964+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:37.6650985+05:30:Thread#0:T:  3)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:37.6690974+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:37.6740985+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:37.6780992+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:37.6810985+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:37.6850996+05:30:Thread#0:T:  4)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:37.6890998+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:37.6960993+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:37.7000995+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:37.7041007+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:37.7081013+05:30:Thread#0:T:  5)   Exception while navigating to Qualitypoint, Exception : System.NullReferenceException: Object reference not set to an instance of an object.
+2020-11-30T08:22:37.7111006+05:30:Thread#0:T:   at Utils.PublicLibrary.NavigateToQualityPoint(String environment) in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\Utils\PublicLibrary.cs:line 94
+2020-11-30T08:22:37.7151017+05:30:Thread#0:T:   at StepDefinations.LoginSteps.GivenNavigatedToQualityPointApplication() in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\StepDefinations\LoginSteps.cs:line 53
+2020-11-30T08:22:37.7191006+05:30:Thread#0:T:  Expected: True
+2020-11-30T08:22:37.7281024+05:30:Thread#0:T:  But was:  False
+2020-11-30T08:22:37.7321027+05:30:Thread#0:B:When Enter "InCorrectUserr" in UserName field and "InCorrectPassword" in Password field
+2020-11-30T08:22:37.7361029+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:37.7391026+05:30:Thread#0:B:And Click on login button
+2020-11-30T08:22:37.7431037+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:37.7471040+05:30:Thread#0:B:Then "LoginFailedMessage" error message should be displayed in Login Page
+2020-11-30T08:22:37.7501041+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:37.7541043+05:30:Thread#0:B:And Close the Application
+2020-11-30T08:22:37.7621048+05:30:Thread#0:T:skipped because of previous errors
+2020-11-30T08:22:37.7701052+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T08:22:37.7701052+05:30:Thread#:Scheduler: dequeuing a rescheduled testitem: #13
+2020-11-30T08:22:37.7701052+05:30:Thread#0:Scheduler: considering testitem #13 for thread 0
+2020-11-30T08:22:37.7701052+05:30:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T08:22:37.7701052+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2020-11-30T08:22:37.7701052+05:30:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2020-11-30T08:22:37.7701052+05:30:Thread#0:Scheduler: using testitem #13 for thread 0
+2020-11-30T08:22:37.7701052+05:30:Thread#0:Scheduler: Test #13 is scheduled for thread
+2020-11-30T08:22:37.7701052+05:30:Thread#0:Scheduler: with testItemExecutionIndex 2
+2020-11-30T08:22:37.7741059+05:30:Thread#0: Test #13/1 is finished on thread #0 as Failed within 8.8943172 seconds
+2020-11-30T08:22:37.7791053+05:30:Thread#0: Test #13/2 is started on thread #0
+2020-11-30T08:22:37.7831064+05:30:Thread#0:B:Given Browser is launced

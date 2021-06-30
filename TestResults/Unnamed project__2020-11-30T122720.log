@@ -1,0 +1,78 @@
+﻿2020-11-30T12:27:20.7131577+05:30;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2020-11-30T12:27:20.7131577+05:30;VSTestExecutionThread;Info;SpecFlow+Runner 3.5.8 in Framework clr40 in x86 mode execution started
+2020-11-30T12:27:20.7131577+05:30;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\packages\SpecRun.Runner.3.5.8\tools\net461\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2020-11-30T12:27:20.7131577+05:30;VSTestExecutionThread;Info;Current UserName: 'gnaneshwar.kondapaka', MachineName: 'GGK-UPL-DEV-FC'
+2020-11-30T12:27:20.8111644+05:30;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:27:20.8121635+05:30;VSTestExecutionThread;Info;Output folder configured to "C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults" (default)
+2020-11-30T12:27:20.8121635+05:30;VSTestExecutionThread;Info;Profile: 
+2020-11-30T12:27:20.8911692+05:30;VSTestExecutionThread;Info;Log file path: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T122720.log
+2020-11-30T12:27:20.9001697+05:30;Thread#11;Info;Checking activation
+2020-11-30T12:27:21.0181777+05:30;Thread#11;Info;Activated.
+2020-11-30T12:27:21.0181777+05:30;Thread#11;Info;Activation check completed
+2020-11-30T12:27:21.0181777+05:30;Thread#11;Info;Starting test run
+2020-11-30T12:27:21.2791938+05:30;Thread#11;Info;Discovering target: Default
+2020-11-30T12:27:21.2801938+05:30;Thread#11;Info;Discovering tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:27:21.8082231+05:30;Thread#11;Info;Discovered tests from assembly: C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\ClassLibraryDotNetFrameWork.dll
+2020-11-30T12:27:21.8102250+05:30:Test Suite Dump
+2020-11-30T12:27:21.8122251+05:30:#0: Unnamed project/ - 
+2020-11-30T12:27:21.8122251+05:30:#1: Default - 
+2020-11-30T12:27:21.8122251+05:30:#2: ClassLibraryDotNetFrameWork - 
+2020-11-30T12:27:21.8122251+05:30:#11: Login - 
+2020-11-30T12:27:21.8972296+05:30:#12: Logging in with valid credentials - TestAssembly:ClassLibraryDotNetFrameWork/Feature:Login/Scenario:Logging+in+with+valid+credentials
+2020-11-30T12:27:21.8972296+05:30:End: Test Suite Dump
+2020-11-30T12:27:21.9572335+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:27:21.9592336+05:30:Thread#:Scheduler: testitem #12 from normal test queue 
+2020-11-30T12:27:21.9592336+05:30:Thread#0:Scheduler: considering testitem #12 for thread 0
+2020-11-30T12:27:21.9642338+05:30:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2020-11-30T12:27:21.9642338+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2020-11-30T12:27:21.9642338+05:30:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2020-11-30T12:27:21.9642338+05:30:Thread#0:Scheduler: using testitem #12 for thread 0
+2020-11-30T12:27:21.9662339+05:30:Thread#0:Scheduler: Test #12 is scheduled for thread
+2020-11-30T12:27:21.9702341+05:30:Thread#0:Scheduler: with testItemExecutionIndex 0
+2020-11-30T12:27:21.9732342+05:30:Thread #0: creating new test thread executor for ClassLibraryDotNetFrameWork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2020-11-30T12:27:21.9752343+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T12:27:21.9802349+05:30:Thread #0: Creating test assembly executor for execution model AppDomain
+2020-11-30T12:27:21.9822350+05:30:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2020-11-30T12:27:22.6232720+05:30:Thread#0:T:-> Loading plugin C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\ClassLibraryDotNetFrameWork\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2020-11-30T12:27:22.6372744+05:30:Thread#0:T:-> Using default config
+2020-11-30T12:27:23.8743540+05:30:Thread#0: Test #12/0 is started on thread #0
+2020-11-30T12:27:23.9143569+05:30:Thread#0:B:Given Browser is launced
+2020-11-30T12:27:29.8257215+05:30:Thread#0:T:done: LoginSteps.GivenBrowserIsLaunced() (5.9s)
+2020-11-30T12:27:29.8287217+05:30:Thread#0:B:And Navigated to QualityPoint Application
+2020-11-30T12:27:29.8297222+05:30:Thread#0:T:Project path : C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults
+2020-11-30T12:27:29.8297222+05:30:Thread#0:T:Project path : .\Reports
+2020-11-30T12:27:33.9239776+05:30:Thread#0:T:done: LoginSteps.GivenNavigatedToQualityPointApplication() (4.1s)
+2020-11-30T12:27:33.9319789+05:30:Thread#0:B:When Enter "AdminUserName" in UserName field and "AdminPassword" in Password field
+2020-11-30T12:27:34.2990016+05:30:Thread#0:T:done: LoginSteps.WhenIEnterInUserNameAndInPassword("AdminUserName", "AdminPassword") (0.4s)
+2020-11-30T12:27:34.3040022+05:30:Thread#0:B:And Click on login button
+2020-11-30T12:27:39.5553320+05:30:Thread#0:T:done: LoginSteps.WhenClickOnLoginButton() (5.2s)
+2020-11-30T12:27:39.5603327+05:30:Thread#0:B:Then Should be Navigated to "Report" Page
+2020-11-30T12:27:39.5823329+05:30:Thread#0:T:done: LoginSteps.ThenShouldBeNavigatedToPage("Report") (0.0s)
+2020-11-30T12:27:39.5863335+05:30:Thread#0:B:And Logout from the Application
+2020-11-30T12:27:44.3486323+05:30:Thread#0:T:done: LoginSteps.ThenLogoutFromTheApplication() (4.8s)
+2020-11-30T12:27:44.3746338+05:30:Thread#0:Scheduler: get next test for thread 0
+2020-11-30T12:27:44.3746338+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T12:27:44.3746338+05:30:Thread#0:Scheduler: enumerator for thread is at end
+2020-11-30T12:27:44.3746338+05:30:Thread#0:Scheduler: No more tests for thread
+2020-11-30T12:27:44.4006354+05:30:Thread#0: Test #12/0 is finished on thread #0 as Succeeded within 20.5262814 seconds
+2020-11-30T12:27:51.9201003+05:30:Trying to cancel thread
+2020-11-30T12:27:51.9201003+05:30:Thread cancelled
+2020-11-30T12:27:51.9281011+05:30:Thread#-1:Scheduler: get next test for thread -1
+2020-11-30T12:27:51.9281011+05:30:Thread#:Scheduler: at the end of normal test queue
+2020-11-30T12:27:51.9281011+05:30:Thread#-1:Scheduler: enumerator for thread is at end
+2020-11-30T12:27:51.9401012+05:30;Thread#11;Info;test run finished
+2020-11-30T12:27:51.9411007+05:30;Thread#11;Info;publishing test results
+2020-11-30T12:27:51.9521021+05:30;Thread#11;Info;test results published
+2020-11-30T12:27:51.9521021+05:30;Thread#11;Info;generating reports
+2020-11-30T12:27:52.2591246+05:30;Thread#11;Info;Starting external report generation process
+2020-11-30T12:27:55.2823126+05:30;Thread#11;Info;Successfully generated reports.
+2020-11-30T12:27:55.2903135+05:30;Thread#11;Info;Successfully generated reports
+2020-11-30T12:27:55.3043151+05:30:Total: 1
+2020-11-30T12:27:55.3063147+05:30:Succeeded: 1
+2020-11-30T12:27:55.3063147+05:30:Ignored: 0
+2020-11-30T12:27:55.3073143+05:30:Pending: 0
+2020-11-30T12:27:55.3073143+05:30:Skipped: 0
+2020-11-30T12:27:55.3083144+05:30:Failed: 0
+2020-11-30T12:27:55.3233151+05:30;VSTestExecutionThread;Info;Adding attachments to VSTest
+2020-11-30T12:27:55.3233151+05:30;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\gnaneshwar.kondapaka\Desktop\Assignments\ClassLibraryDotNetFrameWorkSolution\TestResults\Unnamed project__2020-11-30T122720.html'
+========== End of log file ==========
